@@ -19,7 +19,7 @@ import { useContext } from 'react';
 import { MyContext } from '../../../../Contaxt/Context';
 import { useEffect } from 'react';
 const IndividualCourse = () => {
-  const { addToCart, setAddToCart } = useContext(MyContext);
+  const { addToCart, setAddToCart, language } = useContext(MyContext);
   const handleAddtoCart = () => {
     setAddToCart([...addToCart, 'one']);
   };
@@ -147,58 +147,85 @@ const IndividualCourse = () => {
   }, []);
 
   return (
-    <section className="px-4 py-2 mx-auto max-w-full md:max-w-full lg:max-w-screen-xl xl:max-w-screen-xl 2xl:max-w-screen-2xl  lg:px-20 2xl:px-8">
-      <div className="grid grid-cols-5 lg:gap-x-12 mt-[100px]">
+    <section className="px-4 py-2 mx-auto max-w-full text-md md:max-w-full lg:max-w-screen-xl xl:max-w-screen-xl 2xl:max-w-screen-2xl lg:px-20 2xl:px-8">
+
+      <div className="grid grid-rows-2 lg:grid-cols-8 sm:gap-y-12 lg:gap-x-12 mt-[100px]">
+        
         {/* left side  */}
-        <div className="col-span-5 lg:col-span-3">
-          <h2 className="font-bold text-4xl pb-5">Dynamic Web Design</h2>
-          <p className="font-bold text-[#4E4E4E] pb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            aliquam doloribus a neque voluptatum placeat vitae praesentium
-            nesciunt repudiandae iusto.
+        <div className="col-span-8 row-span-3 lg:col-span-5">
+          <p className=" font-bold text-[#4E4E4E] pb-4">
+            {language == 'bn'? 'আপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছে দিতে পারে সফলতার শীর্ষে। আমাদের এ আই রোডম্যাপ এবং কনসাল্টেন্সি সার্ভিস বিভিন্ন এ এই এক্সপার্টদের দ্বারা তৈরি করা' :'No matter what background you are a student or learner, the right roadmap can take you to the pinnacle of success. Our AI roadmap and consultancy services are developed by these experts in various fields'}
           </p>
 
           {/* course contents  */}
           <div>
-            <span className="text-[26px] font-bold">Course Contents</span>
+
+            <span className="lg:text-2xl font-bold">{language == 'bn' ? 'কোর্স মডিউল' : 'Course Contents'}</span>
+            
             <div className=" rounded-tr-[10px] rounded-bl-[10px] bg-white w-full lg:w-[692px] mt-4">
+
               {courseContent?.map((course, i) => (
+
                 <div key={i} className="pt-5 ">
+
                   <div className=" rounded-[10px] p-2">
+
                     <Disclosure>
                       {({ open }) => (
                         <>
-                          <Disclosure.Button className="w-full lg:flex justify-between px-4 py-2 text-left border-b-2 border-dashed border-black">
-                            <span className="text-[#DE000A] font-bold text-2xl">
+                          
+                          <Disclosure.Button className="w-full flex space-x-3 lg:flex items-center justify-between px-4 pb-6 text-left border-b-2 border-dashed border-black">
+
+                            <span className="text-[#DE000A] font-bold lg:text-2xl">
                               {course.title}
                             </span>
+
                             <div className="flex gap-4">
-                              <button className="bg-[#FA111B] text-white w-[116px] px-3 py-2 font-bold rounded-[10px]">
-                                Checkout
-                              </button>
+                              <div className="w-20 lg:w-40 text-center group relative inline-bloc shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
+
+                                <span
+                                className="absolute inset-y-0 left-0 w-[2px]  bg-[#ffffff] transition-all group-hover:w-full"
+                                ></span>
+                                
+                                <span className="relative text-sm font-medium text-white transition-colors  group-hover:text-red-600">
+                                  {language == 'bn'? 'দেখুন' :'Checkout'}
+                                </span>
+
+                              </div>
+
                               <ChevronUpIcon
                                 className={`${open ? 'rotate-180 transform' : ''
                                   } h-10 w-10 text-[#DE000A] font-bold`}
                               />
+
                             </div>
                           </Disclosure.Button>
+
                           <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+
                             {course.contents?.map((content, i) => (
                               <p key={i}>{content}</p>
                             ))}
+
                           </Disclosure.Panel>
+
                         </>
                       )}
                     </Disclosure>
+
                   </div>
+
                 </div>
+
               ))}
+
             </div>
+
           </div>
 
           {/* course ensure  */}
           <div className="mt-12 ">
-            <span className="text-2xl font-bold">Course Ensure</span>
+            <span className="lg:text-2xl font-bold">{language == 'bn' ? 'কোর্সটি আপনাকে নিশ্চিত করবে' : 'Course Ensure'}</span>
             <div className="grid lg:grid-cols-2 gap-8 lg:w-[699px] bg-white p-7 mt-5">
               {courseEnsures.map((courseEnsure, i) => (
                 <div key={i} className="flex gap-x-3">
@@ -212,14 +239,14 @@ const IndividualCourse = () => {
           {/* Instructor  */}
 
           <div className="mt-[55px]">
-            <h4 className="mb-4 text-2xl font-bold">Instructor</h4>
+            <h4 className="mb-4 lg:text-2xl font-bold">{language == 'bn' ? 'কোর্স ইন্সট্রাক্টর' : 'Instructor'}</h4>
             <div className="lg:w-[699px] bg-white rounded p-4">
               <div className="flex items-center gap-x-4">
                 <div>
                   <img src={instructor} alt="" />
                 </div>
                 <div className="">
-                  <h5 className="font-bold text-2xl cursor-pointer">
+                  <h5 className="font-bold lg:text-2xl cursor-pointer">
                     John Doe
                   </h5>
                   <p className="font-bold">Web Designer & Developer</p>
@@ -232,8 +259,8 @@ const IndividualCourse = () => {
 
           <div className="mt-[55px]">
             <div>
-              <h2 className="text-2xl font-bold mb-4">
-                Details About The Courses
+              <h2 className="lg:text-2xl font-bold mb-4">
+                {language == 'bn' ? 'কোর্স বিবরণ' : 'Details About The Courses'}
               </h2>
               <div className=" rounded-tr-[10px] rounded-bl-[10px] bg-white lg:w-[692px] mt-4">
                 {aboutCourses?.map((about, i) => (
@@ -243,7 +270,7 @@ const IndividualCourse = () => {
                         {({ open }) => (
                           <>
                             <Disclosure.Button className="w-full flex justify-between px-4 py-2 text-left border-b-2 border-dashed border-black">
-                              <span className="text-[#DE000A] font-bold text-2xl">
+                              <span className="text-[#DE000A] font-bold lg:text-2xl">
                                 {about.title}
                               </span>
                               <div className="flex gap-4">
@@ -273,7 +300,7 @@ const IndividualCourse = () => {
           {/* payment methods  */}
           <div>
             <div>
-              <h2 className="mt-8 text-2xl font-bold">Payment Accept</h2>
+              <h2 className="mt-8 lg:text-2xl font-bold">{language == 'bn' ? 'পেমেন্ট সম্পন্ন করুন' : 'Payment Accept'}</h2>
               <div className=" rounded-tr-[10px] rounded-bl-[10px] bg-white lg:w-[692px] mt-4 p-4">
                 <div className="grid grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center">
                   {methods.map((method, i) => (
@@ -287,7 +314,23 @@ const IndividualCourse = () => {
           {/* earn certificate  */}
 
           <div className="mt-[35px]">
-            <h2 className="font-bold text-2xl">How to earn your certificate</h2>
+            <h2 className="font-bold lg:text-2xl">{language == 'bn' ? 'কিভাবে সার্টিফিকেট পাবেন' : 'How to earn your certificate'}</h2>
+            <div className="rounded-tr-[10px] rounded-bl-[10px] bg-white lg:w-[692px] mt-4">
+              <div className="grid gap-y-3 p-5">
+                {earnCertificates.map((certificate, i) => (
+                  <div key={i} className="flex gap-x-3 ">
+                    <img src={Right} alt="" />
+                    <p>{certificate}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* skills and elements  */}
+
+          <div className="mt-[35px]">
+            <h2 className="font-bold lg:text-2xl">{language == 'bn' ? 'প্রয়োজনীয় স্কিল ও উপকরণ' : 'Necessary Skills and Elements'}</h2>
             <div className="rounded-tr-[10px] rounded-bl-[10px] bg-white lg:w-[692px] mt-4">
               <div className="grid gap-y-3 p-5">
                 {earnCertificates.map((certificate, i) => (
@@ -303,34 +346,43 @@ const IndividualCourse = () => {
           {/* FAQ section */}
 
           <div>
-            <h2 className="font-bold text-2xl mt-[35px]">FAQ</h2>
-            <div className="rounded-tr-[10px] rounded-bl-[10px] bg-white lg:w-[692px] mt-4">
-              {faqs.map((faq, i) => (
-                <div key={i} className="pt-5 ">
-                  <div className=" rounded-[10px] p-2">
-                    <Disclosure>
-                      {() => (
-                        <>
-                          <Disclosure.Button className="w-full flex justify-between px-4 py-2 text-left border-b-2 border-dashed border-black">
-                            <span className="text-[#DE000A] font-bold text-2xl">
-                              {faq.question}
-                            </span>
-                          </Disclosure.Button>
-                          <Disclosure.Panel className="px-4 pt-4 pb-2 font-bold text-base text-black">
-                            {faq.answer}
-                          </Disclosure.Panel>
-                        </>
-                      )}
-                    </Disclosure>
+            <h2 className="font-bold lg:text-2xl mt-[35px]">{language == 'bn' ? 'যেকোনো জিজ্ঞাসা' : 'FAQ'}</h2>
+            <div className=" rounded-tr-[10px] rounded-bl-[10px] bg-white lg:w-[692px] mt-4">
+                {faqs?.map((faq, i) => (
+                  <div key={i} className="pt-5 ">
+                    <div className=" rounded-[10px] p-2">
+                      <Disclosure>
+                        {({ open }) => (
+                          <>
+                            <Disclosure.Button className="w-full flex justify-between px-4 py-2 text-left border-b-2 border-dashed border-black">
+                              <span className="text-[#DE000A] font-bold lg:text-2xl">
+                                {faq.question}
+                              </span>
+                              <div className="flex gap-4">
+                                <ChevronUpIcon
+                                  className={`${open ? 'rotate-180 transform' : ''
+                                    } h-10 w-10 text-[#DE000A] font-bold`}
+                                />
+                              </div>
+                            </Disclosure.Button>
+                            <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+                                <li key={i} className="text-xl">
+                                  {faq.answer}
+                                </li>
+                            </Disclosure.Panel>
+                          </>
+                        )}
+                      </Disclosure>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
           </div>
+          
         </div>
 
         {/* right side  */}
-        <div className="lg:w-[446px] h-[582px] bg-white rounded-[10px] col-span-5 lg:col-span-2">
+        <div className="lg:w-[446px] h-[582px] bg-white rounded-[10px] col-span-8 row-span-2 lg:col-span-3">
           <div>
             <iframe
               width="100%"
@@ -374,31 +426,31 @@ const IndividualCourse = () => {
             </button>
           </div>
         </div>
+        
       </div>
 
       {/* Related Course  */}
       <div>
-        <h2 className="text-2xl font-bold mt-10">Related Courses</h2>
-        <div className=" grid lg:grid-cols-4 md:grid-cols-2 gap-[40px] justify-center pt-[30px]  pb-[50px]">
+        <h2 className="lg:text-2xl font-bold mt-10">{language == 'bn' ? 'উক্ত কোর্স সম্পর্কিত আরো কোর্সসমূহ' : 'Related Courses'}</h2>
+        <div className=" grid grid-cols-2 lg:grid-cols-4 md:grid-cols-2 gap-[40px] justify-center pt-[30px]  pb-[50px]">
           {machineLearningCourse?.map((machineLearning) => (
             <div
               key={machineLearning.id}
-              className="w-[280px] h-[300px] bg-white flex items-center flex-col 
-               rounded-[7px]"
-            >
+              className="lg:w-[280px] lg:h-[300px] bg-white flex items-center flex-col rounded-[7px]">
               <img
-                className="w-[279px] h-[168px] pt-0"
+                className="lg:w-[279px] lg:h-[168px] pt-0"
                 src={machineLearning?.image}
                 alt=""
               />
-              <h2 className="pt-[15px] text-[20px] font-bold px-[43px] text-center">
+              <h2 className="pt-[15px] lg:text-2xl font-bold px-[43px] text-center">
                 {machineLearning.courseName}
               </h2>
-              <p className="text-[14px]">{machineLearning.totalCourses}</p>
+              <p className="lg:text-2xl">{machineLearning.totalCourses}</p>
             </div>
           ))}
         </div>
       </div>
+
     </section>
   );
 };
