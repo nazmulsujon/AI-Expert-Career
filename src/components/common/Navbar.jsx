@@ -287,7 +287,7 @@ const Navbar = () => {
                 </button>
               </Link>
             ) : (
-             <Link
+<Link
   className="group relative inline-bloc hidden md:flex shadow-inner shadow-[#] rounded overflow-hidden border border-[#ED1B24] px-8 py-2 focus:outline-none focus:ring"
   to="/signup"
 >
