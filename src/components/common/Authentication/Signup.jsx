@@ -51,13 +51,12 @@ const Signup = () => {
                     className="bg-[#fff0] border-b border-[#8E8E8E] w-full mb-[40px] px-2 py-3"
                     name="password"
                     placeholder={language === 'bn' ? 'পাসওয়ার্ড' : 'Enter your password'}
-                  />
+            />
                  
-
-                  <button
+              <button
                   type="submit"
-                className="group relative   shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] w-full py-[14px] bg-[#ED1B24] focus:outline-none focus:ring"
-                to="/login"
+                className="group relative   shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] w-full py-[14px] bg-[#ED1B24] "
+              
               >
                 <span
                   className="absolute inset-y-0 left-0 w-[2px]  bg-[#ede2e3] transition-all group-hover:w-full"
@@ -79,7 +78,7 @@ const Signup = () => {
                 </h2>
                 <center>
                   <Link
-                className="group relative   shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-[60px] py-[14px] bg-[#ED1B24] focus:outline-none focus:ring"
+                className="group relative   shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-[60px] py-[14px] bg-[#ED1B24]"
                 to="/login"
               >
                 <span
@@ -93,6 +92,36 @@ const Signup = () => {
                 </span>
               </Link>
                 </center>
+                  {/* join with google button  */}
+                  <div className='mt-10  w-[16rem] mx-auto text-center'>
+                  <Link
+                    to=""
+                    className="px-[20px] py-[10px] bg-white rounded-md text-black shadow-lg flex items-center"
+                  >
+                 <img className='mr-2 w-[20px] h-[20px]' src="/src/assets/register/Google Logo.png" alt="google_logo" />
+                    Continue with Google
+                  </Link>
+                </div>
+                {/* join with facebook button  */}
+                <div className='mt-5 w-[16rem] mx-auto text-center'>
+                  <Link
+                    to=""
+                    className="px-[20px] py-[10px] bg-[#1877F2] rounded-md text-white shadow-lg flex items-center"
+                  >
+                 <img className='mr-2 w-[20px] h-[20px]' src="/src/assets/register/facebook_logo.png" alt="facebook_logo" />
+                    Continue with Facebook
+                  </Link>
+                </div>
+                {/* join with linkedin button  */}
+                <div className='mt-5 w-[16rem] mx-auto text-center'>
+                  <Link
+                    to=""
+                    className="px-[20px] py-[10px] bg-white rounded-md text-black shadow-lg flex items-center"
+                  >
+                 <img className='mr-2 w-[20px] h-[20px]' src="/src/assets/register/linkedinLogo.png" alt="linkedin_logo" />
+                    Continue with Linkedin
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
