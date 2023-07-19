@@ -22,7 +22,7 @@ const CoursesHeader = () => {
 
         <SwiperSlide>
           <div
-            className="w-full lg:py-12 h-full"
+            className="w-screen lg:py-12 pl-28 h-full"
             style={{
               backgroundImage: `url(${CoursesHeaderImg})`,
               backgroundSize: 'cover',
@@ -30,8 +30,9 @@ const CoursesHeader = () => {
             }}
           >
 
-            <div className="lg:flex  w-full h-full px-4">
-              <div className=" h-full ml-3 lg:w-1/2">
+            <div className="lg:flex w-screen h-full px-4">
+
+              <div className="h-full ml-3 pt-12 lg:w-1/2">
 
                 <h2 className="text-[32px] pt-2 lg:text-[42px] text-white font-extrabold text-left">
                   Learn Advance Python
@@ -56,20 +57,19 @@ const CoursesHeader = () => {
                   </span>
 
                 </div>
-
               </div>
 
-              <div className=" h-full flex justify-center items-center lg:w-1/2">
+              <div className="h-full flex justify-center items-center lg:w-1/2">
                 <img src={CoursesHeaderSVG} alt="" />
               </div>
-
+              
             </div>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div
-            className="w-full lg:py-12 h-full"
+            className="w-screen lg:py-12 pl-28 h-full"
             style={{
               backgroundImage: `url(${CoursesHeaderImg})`,
               backgroundSize: 'cover',
@@ -77,8 +77,9 @@ const CoursesHeader = () => {
             }}
           >
 
-            <div className="lg:flex  w-full h-full px-4">
-              <div className=" h-full ml-3 lg:w-1/2">
+            <div className="lg:flex w-screen h-full px-4">
+
+              <div className="h-full ml-3 pt-12 lg:w-1/2">
 
                 <h2 className="text-[32px] pt-2 lg:text-[42px] text-white font-extrabold text-left">
                   Learn Advance Python
@@ -105,17 +106,17 @@ const CoursesHeader = () => {
                 </div>
               </div>
 
-              <div className=" h-full flex justify-center items-center lg:w-1/2">
+              <div className="h-full flex justify-center items-center lg:w-1/2">
                 <img src={CoursesHeaderSVG} alt="" />
               </div>
-
+              
             </div>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div
-            className="w-full lg:py-12 h-full"
+            className="w-screen lg:py-12 pl-28 h-full"
             style={{
               backgroundImage: `url(${CoursesHeaderImg})`,
               backgroundSize: 'cover',
@@ -123,8 +124,9 @@ const CoursesHeader = () => {
             }}
           >
 
-            <div className="lg:flex  w-full h-full px-4">
-              <div className=" h-full ml-3 lg:w-1/2">
+            <div className="lg:flex w-screen h-full px-4">
+
+              <div className="h-full ml-3 pt-12 lg:w-1/2">
 
                 <h2 className="text-[32px] pt-2 lg:text-[42px] text-white font-extrabold text-left">
                   Learn Advance Python
@@ -151,7 +153,7 @@ const CoursesHeader = () => {
                 </div>
               </div>
 
-              <div className=" h-full flex justify-center items-center lg:w-1/2">
+              <div className="h-full flex justify-center items-center lg:w-1/2">
                 <img src={CoursesHeaderSVG} alt="" />
               </div>
               
