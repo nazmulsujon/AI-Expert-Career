@@ -59,7 +59,7 @@ const HeroAria = () => {
                 <span
                   className="relative text-sm font-medium text-white transition-colors  group-hover:text-red-600"
                 >
-                 {language == 'bn'? 'ফ্রি সেমিনারে জয়েন করুন' :'Register Now'}
+                {language == 'bn'? 'ফ্রি সেমিনারে জয়েন করুন' :'Register Now'}
                 </span>
               </Link>
               <button onClick={() => setIsOpen(true)} className="px-[32px] py-[8px] hover:bg-red-600 border border-[#ED1B24] rounded-md text-black shadow-lg flex justify-between items-center gap-2">
