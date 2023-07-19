@@ -20,7 +20,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { addToCart, user,setLanguage, language } = useContext(MyContext);
   // const [openAbout, setOpenAbout] = useState(false);
-  const [onBtn, setOnBtn] = useState("bangla");
+  
   const menuItem = (
     <>
       <li>
