@@ -39,11 +39,12 @@ const Courses = () => {
         {/* courses page header  */}
         <CoursesHeader></CoursesHeader>
       </div>
-      <div className=" py-2 mx-auto max-w-full md:max-w-full lg:max-w-screen-xl xl:max-w-screen-xl 2xl:max-w-screen-2xl  lg:px-20 2xl:px-8">
+      <div className="py-2 max-w-full md:max-w-full lg:max-w-screen-xl xl:max-w-screen-xl 2xl:max-w-screen-2xl">
         {/* course Category (Our total course)  */}
-        <h2 className="text-[35px] font-bold">Our Total Courses</h2>
+        {/* <h2 className="text-[35px] font-bold">Our Total Courses</h2> */}
 
-        <div className="lg:pt-[63px] pt-[30px] grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 justify-items-center gap-y-[24px] md:gap-[34px] pb-[158px]">
+        <div className='flex justify-center'>
+          <div className="lg:pt-[63px] pt-[30px] grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 justify-items-center gap-y-[24px] md:gap-[34px] pb-[158px]">
           {courseCategory?.map((category) => (
             <div key={category.id} className='w-full'>
               <div className="w-full md:w-[280px] h-[300px] bg-[#ED1B23B2] flex items-center flex-col justify-center gap-[34px] rounded-[10px]">
@@ -57,6 +58,7 @@ const Courses = () => {
               </div>
             </div>
           ))}
+        </div>
         </div>
 
         {/* All Courses (Our Courses) */}
