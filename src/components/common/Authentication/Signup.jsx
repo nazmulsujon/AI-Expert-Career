@@ -1,8 +1,11 @@
 import loginBG from '../../../assets/LoginBg.svg';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import { MyContext } from '../../../Contaxt/Context';
+import { useContext } from 'react';
 
 const Signup = () => {
+  const { language } = useContext(MyContext)
   // scrollTo
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -15,7 +18,8 @@ const Signup = () => {
             <div className="px-[40px] lg:px-[70px] py-[40px] lg:py-[100px] bg-white lg:col-span-7 z-10">
               <div className="relative">
                 <h2 className="text-[27px] font-bold mb-[45px]">
-                  Create an Account
+                {language === 'bn' ? 'নতুন একাউন্ট ফর্ম' : "Create an Account"}
+                  
                 </h2>
                 <img
                   className="absolute right-0 top-[50%] transform  -translate-y-[50%]  -z-10"
@@ -27,47 +31,67 @@ const Signup = () => {
                     type="email"
                     className="bg-[#fff0] border-b border-[#8E8E8E] w-full mb-[35px] px-2 py-3"
                     name="email"
-                    placeholder="Enter your email"
+                    placeholder={language === 'bn' ? 'আপনার ইমেইল' : 'Enter your email'}
                   />
                   <input
                     type="text"
                     className="bg-[#fff0] border-b border-[#8E8E8E] w-full mb-[35px] px-2 py-3"
                     name="name"
-                    placeholder="Enter your name"
+                    placeholder={language === 'bn' ? 'আপনার নাম' : 'Enter your name'}
+                    
                   />
                   <input
                     type="number"
                     className="bg-[#fff0] border-b border-[#8E8E8E] w-full mb-[35px] px-2 py-3"
                     name="phone"
-                    placeholder="Enter your phone number"
+                  placeholder={language === 'bn' ? 'আপনার মোবাইল নম্বর' : 'Enter your phone number'}
                   />
                   <input
                     type="password"
                     className="bg-[#fff0] border-b border-[#8E8E8E] w-full mb-[40px] px-2 py-3"
                     name="password"
-                    placeholder="Enter your password"
+                    placeholder={language === 'bn' ? 'পাসওয়ার্ড' : 'Enter your password'}
                   />
+                 
+
                   <button
-                    type="submit"
-                    className=" py-[14px] bg-[#ED1B24] rounded-md text-white shadow-lg w-full"
-                  >
-                    Sign Up
-                  </button>
+                  type="submit"
+                className="group relative   shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] w-full py-[14px] bg-[#ED1B24] focus:outline-none focus:ring"
+                to="/login"
+              >
+                <span
+                  className="absolute inset-y-0 left-0 w-[2px]  bg-[#ede2e3] transition-all group-hover:w-full"
+                ></span>
+
+                <span
+                  className="relative text-sm font-medium text-white transition-colors  group-hover:text-red-600"
+                >
+               {language === 'bn' ? 'সাবমিট' : "Sign Up "}
+                </span>
+              </button>
                 </form>
               </div>
             </div>
             <div className="px-10 py-14 bg-[#FFD8D8] lg:col-span-5 relative">
               <div className="lg:absolute top-[50%] left-[50%] lg:transform lg:-translate-x-[50%] lg:-translate-y-[50%]">
                 <h2 className="text-[27px] font-bold mb-6 text-center">
-                  Already create an account
+                  {language === 'bn' ? 'একাউন্ট আছে ?' : " Already create an account"}
                 </h2>
                 <center>
                   <Link
-                    to="/login"
-                    className="px-[60px] py-[14px] bg-[#ED1B24] rounded-md text-white shadow-lg"
-                  >
-                    Sign In
-                  </Link>
+                className="group relative   shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-[60px] py-[14px] bg-[#ED1B24] focus:outline-none focus:ring"
+                to="/login"
+              >
+                <span
+                  className="absolute inset-y-0 left-0 w-[2px]  bg-[#ede2e3] transition-all group-hover:w-full"
+                ></span>
+
+                <span
+                  className="relative text-sm font-medium text-white transition-colors  group-hover:text-red-600"
+                >
+                {language === 'bn' ? 'সাইন ইন' : " Sign In"}
+                </span>
+              </Link>
                 </center>
               </div>
             </div>
