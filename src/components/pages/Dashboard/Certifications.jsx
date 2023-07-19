@@ -1,7 +1,10 @@
 import badgeImg from '../../../assets/Dashboard/Rectangle.png'
 import download from '../../../assets/Dashboard/Download.png'
 import ExitTo from '../../../assets/Dashboard/Exit Top Right.png'
+import { MyContext } from '../../../Contaxt/Context';
+import { useContext } from 'react';
 const Certifications = () => {
+    const { language } = useContext(MyContext)
     const certificats = [
         {
             badge: badgeImg,
@@ -14,7 +17,9 @@ const Certifications = () => {
     ]
     return (
         <div className="mt-[30px] mb-12">
-            <h2 className='text-xl font-bold'>Certifications</h2>
+            <h2 className='text-xl font-bold'>
+            {language === 'bn' ?  'সার্টিফিকেশন' : 'Certifications'}
+                </h2>
             <div className="mt-5 space-y-2.5">
                 {certificats.map(({ badge, courseName }, i) => <div key={i} className='bg-[#ED1B24]/10 p-2 flex items-center shadow-[0px_2px_6px_#0000004A]'>
                     <div className='w-[63px] h-[63px] mr-6 bg-black flex justify-center items-center'>
