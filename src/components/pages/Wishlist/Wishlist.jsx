@@ -3,8 +3,11 @@ import aboutBlog from "../../../assets/wishlist/ai.jpg";
 import msgIcon from "../../../assets/wishlist/icons/msg-icon.svg";
 import eyeIcon from "../../../assets/wishlist/icons/eye-icon.svg";
 import { useEffect } from "react";
+import { useContext } from "react";
+import { MyContext } from "../../../Contaxt/Context";
 
 const Wishlist = () => {
+  const { language } = useContext(MyContext)
   const aboutCourses = [
     {
       id: "1",
@@ -63,19 +66,21 @@ const Wishlist = () => {
   }, []);
   return (
     <div>
-      <div className="my-12">
-        <h1 className="font-bold ">Course</h1>
-        <div className="grid md:grid-cols-3 gap-12">
+      <div className="my-5">
+      <h3 className='text-xl font-bold mb-2'>
+                {language === 'bn' ?  'কোর্স সমূহ' : 'Courses'}
+                    </h3>
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 md:gap-12">
           {aboutCourses.map(({ id, img, headline, info }) => (
             <div
               key={id}
-              className="border-gray-50 shadow-lg hover:shadow-lg bg-[#FFFFFF] rounded-[10px] w-[280px] h-[300px]"
+              className="border-gray-50 shadow-lg hover:shadow-lg bg-[#FFFFFF] rounded-[10px]  md:w-[280px] md:h-[300px]"
             >
               <center>
                 <img className="mb-[18px] w-full shadow-md" src={img} alt="courseImg" />
               </center>
               <div className="">
-                <h3 className="text-[20px] px-12 font-bold mb-[10px] text-center">{headline}</h3>
+                <h3 className="text-[20px] font-bold mb-[5px] text-center">{headline}</h3>
                 <p className="font-semibold text-center mb-[10px]">{info}</p>
               </div>
             </div>
@@ -84,30 +89,34 @@ const Wishlist = () => {
       </div>
 
       <div className="my-12">
-        <h1 className="font-bold ">Blog</h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <h3 className='text-xl font-bold mb-2'>
+                {language === 'bn' ?  'ব্লগ' : 'Blog'}
+                    </h3>
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-12">
           {aboutBlogs.map(({ id, img, headline, info }) => (
             <div
               key={id}
-              className="px-[17px] py-[15px] shadow-lg hover:shadow-lg rounded-[10px] bg-[#FFFFFF]  w-[282px] h-[390px]"
+              className="px-[10px] py-[8px] md:px-[15px] md:py-[15px] shadow-lg hover:shadow-lg rounded-[10px] bg-[#FFFFFF]  md:w-[282px] md:h-[390px]"
             >
               <center>
                 <img className="mb-[18px] w-full" src={img} alt="courseImg" />
               </center>
               <div className="">
-                <h3 className="text-[18px] font-bold mb-[10px] text-center">{headline}</h3>
-                <p className="font-semibold text-center mb-[10px] text-[12px]">
+                <h3 className="text-sm md:text-[18px] font-bold md:mb-[10px] text-left">{headline}</h3>
+                <p className="md:font-semibold text-left md:text-center mb-[10px] text-[12px]">
                   {info.slice(0, 100) + "..."} <a href="#">See More</a>
                 </p>
               </div>
-              <div className="flex justify-between items-center my-8">
-                <button className="btn bg-[#ED1B23] text-white w-[91px] h-[44px] rounded-[10px]">Modal</button>
-                <a href="#" className="flex items-center">
+              <div className="md:flex justify-between items-center md:mt-10">
+                <button className="my-btn bg-[#ED1B23] text-white w-[139px] md:w-[91px] h-[36px] rounded-[10px] mb-3">Modal</button>
+               <div className="flex justify-between items-center px-3">
+               <a href="#" className="flex items-center">
                   <img className="mr-2" src={msgIcon} alt="" /> 50
                 </a>
-                <a href="#" className="flex items-center">
+                <a href="#" className="flex items-center md:ml-5">
                   <img className="mr-2" src={eyeIcon} alt="" /> 50
                 </a>
+               </div>
               </div>
             </div>
           ))}
