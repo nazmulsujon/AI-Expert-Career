@@ -8,16 +8,21 @@ import square from '../../../assets/aboutus/Rectangle 621.png'
 import facebook from '../../../assets/aboutus/_Facebook.png'
 import linkedin from '../../../assets/aboutus/_Linkedin.png'
 import victor from '../../../assets/aboutus/Vector (1).png'
+import { useContext } from 'react'
+import { MyContext } from '../../../Contaxt/Context'
 const ContuctUs = () => {
+
+    const {language} = useContext(MyContext)
+
     return (
         <div className=' md:grid grid-cols-2  mt-[70px]'>
             <div className=' flex justify-center items-center'>
                 <div className='lg:px-[82px] px-[30px]'>
                     <div className='flex w-full justify-between'>
-                        <h3 className='text-xl font-semibold text-[#ED1B24]'>Contuct us</h3>
+                        <h3 className='text-xl font-semibold text-[#ED1B24]'>{language == 'bn' ? 'যোগাযোগ করুন' : 'Contuct us'}</h3>
                         <img src={circle} alt="" />
                     </div>
-                    <h1 className='text-[35px] font-bold text-black/90 mt-[12px]'>Get In Touch With Us </h1>
+                    <h1 className='text-[35px] font-bold text-black/90 mt-[12px]'> {language == 'bn' ? 'যেকোনো জিজ্ঞাসা বা প্রয়োজনে আমাদের জানান,' : 'Get In Touch With Us'}</h1>
                     <p className='font-medium text-black/80'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has</p>
                     <div className='flex my-2 w-4/6 justify-between '>
                         <img src={square} alt="" className='h-[30px] w-[30px] -ml-12' />
