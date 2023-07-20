@@ -2,7 +2,7 @@ import blogBanner from './Assests/blogbanner.png';
 import icon from './Assests/RectangleIon.png';
 import left from './Assests/left.svg';
 import right from './Assests/right.svg';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import img1 from './Assests/Rectangle.png';
 import img2 from './Assests/Rectangle1.png';
 import img3 from './Assests/Rectangle2.png';
@@ -18,6 +18,8 @@ import img12 from './Assests/Rectangle11.png';
 import CategoryCard from './CategoryCard';
 import BlogCard from './BlogCard';
 import { useEffect } from 'react';
+import { MyContext } from '../../../Contaxt/Context';
+import { BiDotsHorizontalRounded } from 'react-icons/bi'
 
 const categories = [
   'Machine Learning',
@@ -144,9 +146,12 @@ const productsData = [
 ];
 
 const Blog = () => {
+
+  const {language} = useContext(MyContext)
   const [newData, setNewData] = useState(productsData);
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
   const pagination = [1, 2, 3, 4, 5];
+  
 
   const handleCheckboxChange = (event) => {
     const checkboxValue = event.target.value;
@@ -190,6 +195,7 @@ const Blog = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 mt-[120px]">
       <div
@@ -201,20 +207,21 @@ const Blog = () => {
           width: 'full',
         }}
       >
-        <div className="flex flex-col items-center justify-center py-[90px]">
-          <h2 className="text-[30px] font-bold">Blog</h2>
+        <div className="width-screen flex flex-col items-center justify-center py-[90px]">
+          <h2 className="text-[30px] font-bold">{language == 'bn' ? 'ব্লগ' : 'Blog'}</h2>
           <img className="w-[31px] pb-[30px]" src={icon} alt="" />
           <p className="lg:w-[689px] text-center text-[#484848]">
-            Welcome to our AI-related blog, where we delve into the limitless
-            possibilities of Artificial Intelligence and its impact on various
-            fields.
+            {language == 'bn' ? 'আপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছে দিতে পারে সফলতার শীর্ষে। আমাদের এ আই রোডম্যাপ এবং কনসাল্টেন্সি সার্ভিস বিভিন্ন এ এই এক্সপার্টদের দ্বারা তৈরি করা' : 'Welcome to our AI-related blog, where we delve into the limitless possibilities of Artificial Intelligence and its impact on various fields.'}
           </p>
         </div>
       </div>
 
       <div className=" py-[122px]">
         <div className="flex justify-end">
-          <div className=" mb-[33px] md:block hidden">
+          <div className=" mb-[33px] flex justify-between items-center space-x-6">
+            <div className='lg:hidden text-2xl'>
+              <BiDotsHorizontalRounded />
+            </div>
             <select
               onChange={getFilter}
               className="bg-gray-50 border w-[120px] border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -227,66 +234,29 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className="md:grid grid-cols-5 gap-[15px]">
-          <div className="md:block flex justify-between items-center">
-            <h2 className="font-bold text-[20px] pb-[40px] md:block hidden">
-              Filter category
-            </h2>
-            <div className="md:block hidden">
-              {categories?.map((category, index) => (
-                <CategoryCard
-                  key={index}
-                  category={category}
-                  selectedCheckboxes={selectedCheckboxes}
-                  handleCheckboxChange={handleCheckboxChange}
-                />
-              ))}
-            </div>
-            <div className="block md:hidden mb-10">
-              <h2 className="font-bold text-[18px] pb-[20px] block md:hidden">
-                Filter category
+        <div className="lg:grid lg:grid-cols-5 gap-[15px]">
+          {/* Hide this section on medium and small devices */}
+          <div className="hidden lg:block">
+            <div className="flex flex-col justify-between items-center">
+              <h2 className="font-bold text-[20px] pb-[40px]">
+                {language == 'bn' ? 'ক্যাটাগরি পছন্দ করুন' : 'Filter category'}
               </h2>
-              <div className="flex justify-between">
-                <div>
-                  {categories?.map((category, index) => (
-                    <div key={index} className="text-[20px] font-bold">
-                      <input
-                        value={category}
-                        id={`flexCheckDefault-${index}`}
-                        checked={selectedCheckboxes.includes(category)}
-                        onChange={handleCheckboxChange}
-                        type="checkbox"
-                      />{' '}
-                      <label
-                        className="form-check-label"
-                        htmlFor={`flexCheckDefault-${index}`}
-                      >
-                        {category}
-                      </label>
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <div className="flex justify-end mb-[33px] ">
-                    <select
-                      onChange={getFilter}
-                      id="countries"
-                      className="bg-gray-50 border w-[120px] border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    >
-                      <option defaultChecked>All</option>
-                      <option value="Trends">Trends</option>
-                      <option value="Most Reviews">Most Reviews</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                </div>
+              <div>
+                {categories?.map((category, index) => (
+                  <CategoryCard
+                    key={index}
+                    category={category}
+                    selectedCheckboxes={selectedCheckboxes}
+                    handleCheckboxChange={handleCheckboxChange}
+                  />
+                ))}
               </div>
             </div>
           </div>
           <div className="col-span-4">
             <div className="">
               {/* <BlogCard></BlogCard> */}
-              <div className="grid  md:grid-cols-3 gap-[40px] justify-center">
+              <div className="grid  md:grid-cols-2 md:gap-x-20 lg:grid-cols-3 gap-[40px] justify-center">
                 {filteredProducts?.map((blog) => (
                   <BlogCard key={blog.id} blog={blog} />
                 ))}
@@ -294,6 +264,7 @@ const Blog = () => {
             </div>
           </div>
         </div>
+
 
         <div className="flex gap-4 justify-center pt-[40px]">
           <div className="w-[50px] h-[50px] bg-[#D9D9D9] rounded-[10px] font-bold flex justify-center items-center">
