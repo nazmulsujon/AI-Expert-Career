@@ -36,28 +36,28 @@ const PurchaseHistory = () => {
                         <tr>
                             <th className="text-center">1</th>
                             <td className="text-center">Adobe Photoshop Advance Training</td>
-                            <td className="text-center">$6000</td>
+                            <td className="text-center">$8000</td>
                             <td className="text-center">02-06-2023</td>
                             <td className="text-center"><button className="bg-[red] text-white px-3 py-2 rounded-lg my-btn">  {language === 'bn' ? "ডাউনলোড" : "Download"}</button></td>
                         </tr>
                         <tr>
                             <th className="text-center">2</th>
                             <td className="text-center">Adobe Photoshop Advance Training</td>
-                            <td className="text-center">$6000</td>
+                            <td className="text-center">$7000</td>
                             <td className="text-center">02-06-2023</td>
                             <td className="text-center"><button className="bg-[red] text-white px-3 py-2 rounded-lg my-btn">  {language === 'bn' ? "ডাউনলোড" : "Download"}</button></td>
                         </tr>
                         <tr>
                             <th className="text-center">3</th>
                             <td className="text-center">Adobe Photoshop Advance Training</td>
-                            <td className="text-center">$6000</td>
+                            <td className="text-center">$5000</td>
                             <td className="text-center">02-06-2023</td>
                             <td className="text-center"><button className="bg-[red] text-white px-3 py-2 rounded-lg my-btn">  {language === 'bn' ? "ডাউনলোড" : "Download"}</button></td>
                         </tr>
                         <tr>
                             <th className="text-center">4</th>
                             <td className="text-center">Adobe Photoshop Advance Training</td>
-                            <td className="text-center">$6000</td>
+                            <td className="text-center">$4000</td>
                             <td className="text-center">02-06-2023</td>
                             <td className="text-center"><button className="bg-[red] text-white px-3 py-2 rounded-lg my-btn">
                             {language === 'bn' ? "ডাউনলোড" : "Download"}

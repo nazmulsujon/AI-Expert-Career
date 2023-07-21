@@ -88,7 +88,7 @@ const JobOpportunity = () => {
         ))}
       </div>
       {/* pagination  */}
-      <div class="pagination my-[32px] lg:my-[60px] text-center font-semibold">
+      <div className="pagination my-[32px] lg:my-[60px] text-center font-semibold">
         <Link
           className="w-[10px] h-[20px] rounded-lg bg-[#D9D9D9] me-2 mx-auto p-4 text-red-600"
           href="#"
