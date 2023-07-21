@@ -19,7 +19,6 @@ const Signup = () => {
               <div className="relative">
                 <h2 className="text-[27px] font-bold mb-[45px]">
                 {language === 'bn' ? 'নতুন একাউন্ট ফর্ম' : "Create an Account"}
-                  
                 </h2>
                 <img
                   className="absolute right-0 top-[50%] transform  -translate-y-[50%]  -z-10"

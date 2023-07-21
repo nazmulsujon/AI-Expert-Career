@@ -179,11 +179,11 @@ const CourseVideo = () => {
                 <div className='lg:flex mt-3 w-full justify-between items-center'>
                     <h3 className='text-xl font-bold'>How to animate an object filling up to make</h3>
                     <div>
-                        <button className='py-[10px]  rounded-[7px] px-6 border border-[#ED1B24]'>
+                        <button className='py-[8px]  rounded-[7px] px-5 border border-[#ED1B24] hover:bg-[#ED1B24] hover:text-white'>
                         {language === 'bn' ? 'পূর্ববর্তী' : "Previous"}
                             </button>
-                        <button className='py-[10px] ml-5 rounded-[7px] px-6 text-white border border-[#ED1B24] bg-[#ED1B24]'>
-                        {language === 'bn' ? 'পূর্ববর্তী' : "Next"}
+                        <button className='py-[10px] ml-5 rounded-[7px] px-6 text-white border border-[#ED1B24] bg-[#ED1B24] my-btn'>
+                        {language === 'bn' ? 'পরবর্তী' : "Next"}
                             </button>
                     </div>
                 </div>
