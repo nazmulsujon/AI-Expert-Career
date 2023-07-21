@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import hand from '../../../assets/AiConsultant/image 3.png'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FiChevronDown } from "react-icons/fi";
 import DateIcon from '../../../assets/AiConsultant/🦆 icon _calendar_.png'
+import { MyContext } from '../../../Contaxt/Context';
 const Expertise = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [appointDate, setAppointDate] = useState(new Date());
+    const {language} = useContext(MyContext)
     return (
         <div>
             <h3 className="uppercase text-xl mt-4">Expertise</h3>
@@ -41,7 +43,7 @@ const Expertise = () => {
                 </div>
             </div>
             <div className='flex justify-center mt-12'>
-                <button className=' py-2 px-5 bg-[#ED1B24] rounded-[5px] text-white font-semibold'>Appointment</button>
+                <button className=' py-2 px-5 bg-[#ED1B24] rounded-[5px] text-white font-semibold'>{language == 'bn' ? 'ফ্রি এপয়েন্টমেন্ট বুক করুন' : 'Book a Free Appointment'}</button>
             </div>
 
             <div className='mt-24 bg-[#FFFFFF]/30 p-9'>
@@ -113,7 +115,7 @@ const Expertise = () => {
                         <textarea name="" placeholder='Enter case summary' cols="30" rows="4" className='py-2 px-4 block w-full mt-4 outline-none border border-[#ED1B24]/80'></textarea>
                     </div>
                     <div className='flex justify-center'>
-                        <button className='py-[12px] px-[78px] text-xl font-bold bg-[#F6002C] text-white rounded-2xl mt-5'>Submit</button>
+                        <button className='py-[12px] px-[78px] text-xl font-bold bg-[#F6002C] text-white rounded-2xl mt-5'>{language == 'bn' ? 'জমা দিন' : 'Submit'}</button>
                     </div>
                 </form>
             </div>
