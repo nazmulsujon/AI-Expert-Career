@@ -43,7 +43,7 @@ const PurchaseHistory = () => {
                         <tr>
                             <th className="text-center">2</th>
                             <td className="text-center">Adobe Photoshop Advance Training</td>
-                            <td className="text-center">$7000</td>
+                            <td className="text-center">$2000</td>
                             <td className="text-center">02-06-2023</td>
                             <td className="text-center"><button className="bg-[red] text-white px-3 py-2 rounded-lg my-btn">  {language === 'bn' ? "ডাউনলোড" : "Download"}</button></td>
                         </tr>
