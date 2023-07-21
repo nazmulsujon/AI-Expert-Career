@@ -44,7 +44,7 @@ const Courses = () => {
     {/* <h2 className="text-[35px] font-bold">Our Total Courses</h2> */}
 
     <div className='flex justify-center w-11/12 mx-auto'>
-      <div className="lg:pt-[63px] pt-[30px] grid grid-cols-2 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 justify-items-center gap-y-[24px] md:gap-[34px] pb-[158px]">
+      <div className="lg:pt-[63px] pt-[30px] grid grid-cols-2 gap-x-2 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 justify-items-center gap-y-[24px] md:gap-[34px] pb-[158px]">
         {courseCategory?.map((category) => (
           <div key={category.id} className='w-full'>
             <div className="w-full p-8 space-x-4 md:w-[280px] lg:h-[300px] bg-[#ED1B23B2] flex items-center flex-col justify-center gap-[34px] rounded-[10px]">

@@ -121,7 +121,7 @@ const AllCourses = () => {
 
       <div className="mb-12">
         {/* machine learning courses card ** data from array of object  */}
-        <h2 className="text-[30px] font-bold pl-28">{language == 'bn' ? 'ফ্রি কোর্সসমূহ' : 'Free course'}</h2>
+        <h2 className="text-[30px] font-bold text-center lg:text-left lg:pl-28">{language == 'bn' ? 'ফ্রি কোর্সসমূহ' : 'Free course'}</h2>
         
         <div className="bg-[#ED1B241A]/10 w-screen">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-[40px] justify-center pt-[30px] pb-[50px] px-28">
@@ -130,9 +130,9 @@ const AllCourses = () => {
 
               <div
                 key={machineLearning.id}
-                className="w-full md:w-[280px] p-[16px] bg-white flex flex-col rounded-[7px]">
+                className="w-full md:w-[280px]  p-[16px] bg-white flex flex-col rounded-[7px]">
 
-                <img className="w-full md:w-[279px] h-[220px] md:h-[168px] pt-0" src={machineLearning?.image} alt="" />
+                <img className="w-full md:w-[279px] lg:h-[220px] md:h-[168px] pt-0" src={machineLearning?.image} alt="" />
                 <h2 className="pt-[15px] text-[18px] font-bold ">{machineLearning.courseName}</h2>
                 <p className="text-[14px] text-[#818181] font-bold">{machineLearning.details}</p>
 
@@ -169,7 +169,7 @@ const AllCourses = () => {
 
       <div className="mb-12">
         {/* Development courses card ** data from array of object  */}
-        <h2 className="text-[30px] font-bold pl-28">{language == 'bn' ? 'মেশিন লার্নিং কোর্স' : 'Machine Learning Courses'}</h2>
+        <h2 className="text-[30px] font-bold text-center lg:text-left lg:pl-28">{language == 'bn' ? 'মেশিন লার্নিং কোর্স' : 'Machine Learning Courses'}</h2>
 
         <div className="w-screen grid lg:grid-cols-4 md:grid-cols-2 gap-[40px] justify-center pt-[30px] pb-[50px] px-28">
 
@@ -179,7 +179,7 @@ const AllCourses = () => {
               key={machineLearning.id}
               className="w-full md:w-[280px] p-[16px] bg-white flex flex-col rounded-[7px]">
               
-              <img className="w-full md:w-[279px] h-[220px] md:h-[168px] pt-0" src={machineLearning?.image} alt="" />
+              <img className="w-full md:w-[279px] lg:h-[220px] md:h-[168px] pt-0" src={machineLearning?.image} alt="" />
               <h2 className="pt-[15px] text-[18px] font-bold ">{machineLearning.courseName}</h2>
               <p className="text-[14px] text-[#818181] font-bold">{machineLearning.details}</p>
 
@@ -213,7 +213,7 @@ const AllCourses = () => {
 
       <div className="mb-12">
         {/* Design courses card ** data from array of object  */}
-        <h2 className="text-[30px] font-bold pl-28">{language == 'bn' ? 'এ আই ডেভেলপমেন্ট কোর্স' : 'AI Development Courses'}</h2>
+        <h2 className="text-[30px] font-bold text-center lg:text-left lg:pl-28">{language == 'bn' ? 'এ আই ডেভেলপমেন্ট কোর্স' : 'AI Development Courses'}</h2>
 
         <div className="w-screen grid lg:grid-cols-4 md:grid-cols-2 gap-[40px] justify-center pt-[30px] pb-[50px] px-28">
 
@@ -223,7 +223,7 @@ const AllCourses = () => {
               key={design.id}
               className="w-full md:w-[280px] p-[16px] bg-white flex flex-col rounded-[7px]">
               
-              <img className="w-full md:w-[279px] h-[220px] md:h-[168px] pt-0" src={design?.image} alt="" />
+              <img className="w-full md:w-[279px] lg:h-[220px] md:h-[168px] pt-0" src={design?.image} alt="" />
               <h2 className="pt-[15px] text-[18px] font-bold ">{design.courseName}</h2>
               <p className="text-[14px] text-[#818181] font-bold">{design.details}</p>
 
