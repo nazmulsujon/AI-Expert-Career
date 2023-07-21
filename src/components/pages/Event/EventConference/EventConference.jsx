@@ -10,15 +10,15 @@ import { MyContext } from "../../../../Contaxt/Context";
 
 
 const EventConference = ({ eventConference, event }) => {
-  const {setEventData} = useContext(MyContext);
+  const {setEventData, language} = useContext(MyContext);
   return (
     <div className="py-8">
       <div className="md:flex justify-between items-center">
         <div className="flex items-center gap-3">
           <img src={pointIcon} className='' alt="" />
-          <EventTitle title="Conference and Schedule" />
+          <EventTitle title={language == 'bn' ? 'নীতিমালা এবং সময়সুচি' : 'Conference and Schedule'} />
         </div>
-        <Link onClick={()=> setEventData(event)} to="/buy_ticket" className="flex justify-center my-btn md:mt-0 mt-3 items-center gap-3 font-semibold text-white md:w-[200px] w-full  bg-[#DD0A3D] px-4 py-2 rounded-lg"><img src={ticket} alt="" /> Buy a ticket</Link>
+        <Link onClick={()=> setEventData(event)} to="/buy_ticket" className="flex justify-center my-btn md:mt-0 mt-3 items-center gap-3 font-semibold text-white md:w-[200px] w-full  bg-[#DD0A3D] px-4 py-2 rounded-lg"><img src={ticket} alt="" /> {language == 'bn' ? 'টিকেট কিনুন' : 'Buy a ticket'}</Link>
       </div>
 
       <div className="flex flex-row md:flex-col w-full my-7 md:my-0 ">
@@ -37,7 +37,7 @@ const EventConference = ({ eventConference, event }) => {
         </div>
       </div>
 
-      <div className="bg-[white] py-2 md:px-16 h-[845px] overflow-y-scroll" id="conferenceDiv">
+      <div className="bg-[white] py-2 md:px-16 overflow-y-scroll" id="conferenceDiv">
         {
 
           eventConference?.eventCart.map((item) => {
@@ -50,7 +50,7 @@ const EventConference = ({ eventConference, event }) => {
       {/* Our Professional Speacker */}
       <div className="flex  items-center gap-3 py-5 mt-[30px]">
         <img src={pointIcon} className='' alt="" />
-        <EventTitle title="Our Professional Speacker" />
+        <EventTitle title={language == 'bn' ? 'ইভেন্টের সম্মানিত স্পিকারগণ' : 'Our Professional Speacker'} />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {eventConference?.ProfessionalSpeaker.map((speacker, i) => <div key={i} className="cart" align="center">

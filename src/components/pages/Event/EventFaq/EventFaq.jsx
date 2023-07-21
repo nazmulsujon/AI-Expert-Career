@@ -16,7 +16,7 @@ import { useState } from 'react';
 
 // import activeFaq from '../../../.../../../../public/img/event/icon/activeFaq.png'
 const EventFaq = ({ event }) => {
-  const {setEventData} = useContext(MyContext);
+  const {setEventData, language} = useContext(MyContext);
   const [faqData, setFaqData] = useState({
     id: 3,
     title: 'How to make a event ?',
@@ -38,7 +38,7 @@ const EventFaq = ({ event }) => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3 py-5">
           <img src={pointIcon} className="" alt="" />
-          <EventTitle title="Event FAQ" />
+          <EventTitle title={language == 'bn' ? 'ইভেন্ট নিয়ে কিছু কথা' : 'Event FAQ'} />
         </div>
         <a href="#idStart">
             <Link
@@ -47,7 +47,7 @@ const EventFaq = ({ event }) => {
           className="flex my-btn items-center gap-2 bg-[#ED1B24] text-white px-6 py-3 rounded-lg"
         >
           {' '}
-          <LuTicket className="text-2xl" /> Buy a ticket
+          <LuTicket className="text-2xl" />{language == 'bn' ? 'টিকেট কিনুন' : 'Buy a ticket'}
         </Link>
         </a>
       
