@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import userImg from '../../../assets/AiConsultant/Ellipse 46.png';
 import { FiChevronDown } from 'react-icons/fi';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import ListItem from './ListItem';
 import { useEffect } from 'react';
+import { MyContext } from '../../../Contaxt/Context';
 const AiConsultant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState([]);
+  const {language} = useContext(MyContext)
   //
 
   const data = [
@@ -30,23 +32,24 @@ const AiConsultant = () => {
   }, []);
 
   return (
-    <div className='bg-[#f3f2ff00] lg:mt-[10px] mt-[870px] px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl lg:px-8'>
+    <div className='bg-[#f3f2ff00] lg:mt-[10px] px-4 py-5 mx-auto max-w-screen lg:px-8'>
       <div className=" pb-[92px] pt-[130px]">
         <div className="">
           <h1 className="font-bold text-center text-[35px]">
-            Search Ai Consultant, Make an Appointment
+            {language == 'bn' ? 'ক্যারিয়ারের সঠিক দিক নির্দেশনার জন্য কনসালটেন্ট খুঁজুন' : 'Search Ai Consultant, Make an Appointment'}
           </h1>
           <p className="text-center Roboto">
-            Discover the best Ai Consultant, place & the city nearest to you.
+            {language == 'bn' ? 'আপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছে দিতে পারে সফলতার শীর্ষে। আমাদের এ আই রোডম্যাপ এবং কনসাল্টেন্সি সার্ভিস বিভিন্ন এ এই এক্সপার্টদের দ্বারা তৈরি করা' : 'No matter what background you are a student or learner, the right roadmap can take you to the pinnacle of success. Our AI roadmap and consultancy services are developed by these experts in various fields'}
           </p>
-          <div className="mt-10 md:mt-[104px] md:flex">
-            <h3 className="mr-0 md:mr-[55px] lg:mr-[112px] font-semibold text-lg">
-              Filter Consultant
+
+          <div className="mt-10 md:mt-[104px] md:flex lg:items-center">
+            <h3 className="mr-0 md:mr-[55px] lg:mr-[112px] font-semibold text-lg lg:text-2xl">
+              {language == 'bn' ? 'ক্যাটাগরি নির্বাচন করুণ' : 'Filter Consultant'}
             </h3>
             <div className="space-x-0 lg:space-x-2 space-y-2 md:space-y-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
               <input
                 type="text"
-                placeholder="Country"
+                placeholder={language == 'bn' ? 'দেশ' : 'Country'}
                 className="py-2 px-4  w-full md:w-auto border border-[#B8B8B8] "
               />
               <div className="relative">
@@ -59,7 +62,7 @@ const AiConsultant = () => {
                       Multiple Selected
                     </span>
                   ) : (
-                    <span className="btn-text  text-gray-400">Speciality</span>
+                    <span className="btn-text  text-gray-400">{language == 'bn' ? 'দক্ষতা / এক্সপার্ট এরিয়া' : 'Speciality'}</span>
                   )}
 
                   <span
@@ -86,17 +89,19 @@ const AiConsultant = () => {
 
               <input
                 type="text"
-                placeholder="Qualification"
+                placeholder={language == 'bn' ? 'অভিজ্ঞতা / যোগ্যতা' : 'Qualification'}
                 className="py-2 w-full md:w-auto px-4  border border-[#B8B8B8] "
               />
               <input
                 type="text"
-                placeholder="Search"
+                placeholder={language == 'bn' ? 'নাম বা এক্সপার্ট এরিয়া দিয়ে খুঁজুন' : 'Name or Expertise'}
                 className="py-2 w-full md:w-auto px-4 border border-[#B8B8B8] "
               />
             </div>
           </div>
+
           <hr className="border-[0.5px] border-[#ACACAC] my-4" />
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-5 mt-10">
             {[...Array(10)].map((item, i) => (
               <Link
