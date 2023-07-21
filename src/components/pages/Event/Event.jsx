@@ -9,13 +9,16 @@ import EventConference from './EventConference/EventConference';
 import EventFaq from './EventFaq/EventFaq';
 import EventSponsor from './EventSponsor/EventSponsor';
 import ResentEvent from './ResentEvent/ResentEvent';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { MyContext } from '../../../Contaxt/Context';
 
 // import user from '../../../../public/img/event/user.jpg';
 // import user2 from '../../../../public/img/event/Polygon 22.png';
 // import cover from '../../../../public/img/event/cart.jpg';
 
 const Event = () => {
+
+  const {language} = useContext(MyContext)
 
   const [event, setEvent] = useState({
     "id:": 0,
@@ -154,7 +157,7 @@ const Event = () => {
 
 
   return (
-    <div className=" md:mt-[120px] mt-[60px]" id='eventHome'>
+    <div className="" id='eventHome'>
       <header
         className="event-header md:h-[590px] h-[350px] flex items-center justify-center ">
         <div className="">
@@ -173,28 +176,28 @@ const Event = () => {
         <div className="flex items-center gap-4">
           <FaRegCalendarAlt className="text-white text-2xl" />
           <span>
-            <h5 className="text-white font-bold">Date</h5>
+            <h5 className="text-white font-bold">{language == 'bn' ? 'তারিখ' : 'Date'}</h5>
             <p className="text-[#E9E9E9]">{event?.date}</p>
           </span>
         </div>
         <div className="flex items-center gap-4 md:border-l-2 border-dashed  py-6 px-2">
           <FaMapMarkerAlt className="text-white text-2xl" />
           <span>
-            <h5 className="text-white font-bold">Location</h5>
+            <h5 className="text-white font-bold">{language == 'bn' ? 'অবস্থান' : 'Location'}</h5>
             <p className="text-[#E9E9E9]">{event?.location}</p>
           </span>
         </div>
         <div className="flex items-center gap-4  md:border-l-2 border-dashed  py-6 px-2">
           <FaUserFriends className="text-white text-2xl" />
           <span>
-            <h5 className="text-white font-bold">Remaining</h5>
+            <h5 className="text-white font-bold">{language == 'bn' ? 'টিকেট বাকি' : 'Remaining'}</h5>
             <p className="text-[#E9E9E9]">{event?.ticketRemainig} Tickets</p>
           </span>
         </div>
         <div className="flex items-center gap-4  md:border-l-2 border-dashed  py-6 px-2">
           <FaMicrophone className="text-white text-2xl" />
           <span>
-            <h5 className="text-white font-bold">Speaker</h5>
+            <h5 className="text-white font-bold">{language == 'bn' ? 'স্পিকারস' : 'Speaker'}</h5>
             <p className="text-[#E9E9E9]">
               {event?.speaker} Professional speaker
             </p>

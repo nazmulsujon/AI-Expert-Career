@@ -1,11 +1,13 @@
+import { MyContext } from '../../../../Contaxt/Context';
 import EventTitle from '../EventTitle/EventTitle';
-import { useEffect, useState } from 'react';
-
+import { useContext, useEffect, useState } from 'react';
+import pointIcon from '../../../../../public/img/event/icon/Group 594.png';
 
 const ResentEvent = ({ setEvent }) => {
   const [visibleItems, setVisibleItems] = useState(4);
   const [resendEventData, setResendEventData] = useState([])
   const [readMore, setReadMore] = useState(false)
+  const {language} = useContext(MyContext)
   useEffect(() => {
     fetch('ResentEvent.json')
       .then(res => res.json())
@@ -19,8 +21,8 @@ const ResentEvent = ({ setEvent }) => {
   return (
     <div className="my-12">
       <div className="flex items-center gap-3 py-5">
-        {/* <img src={pointIcon} className="" alt="" /> */}
-        <EventTitle title="Resent Event" />
+        <img src={pointIcon} className="" alt="" />
+        <EventTitle title={language == 'bn' ? 'সাম্প্রতিক ইভেন্ট সমূহ' : 'Resent Event'} />
       </div>
 
 
@@ -35,7 +37,7 @@ const ResentEvent = ({ setEvent }) => {
               onClick={() => setEvent(data)}
               className="mt-4 bg-[#f31939] text-white my-btn relative w-full py-3 h-[40px] flex items-center  rounded-lg"
             >
-              <a href="#eventHome" className=' absolute top-0 bg-[] flex items-center justify-center left-0 right-0 bottom-0'>Read more</a>
+              <a href="#eventHome" className=' absolute top-0 bg-[] flex items-center justify-center left-0 right-0 bottom-0'>{language == 'bn' ? 'দেখুন' : 'Read more'}</a>
             </button>
           </div>
         ))}
@@ -45,7 +47,7 @@ const ResentEvent = ({ setEvent }) => {
           onClick={handleSeeMore}
           className="bg-[#E70830] my-btn text-white font-semibold py-3 px-14 rounded-lg"
         >
-          Show more events
+          {language == 'bn' ? 'সব ইভেন্ট দেখুন' : 'Show more events'}
         </button>
       </div>
     </div>

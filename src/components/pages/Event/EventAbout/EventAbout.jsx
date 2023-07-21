@@ -1,10 +1,12 @@
+/* eslint-disable react/prop-types */
 import 'tailwindcss/tailwind.css';
 import pointIcon from '../../../../../public/img/event/icon/Group 592.png';
 import EventTitle from '../EventTitle/EventTitle';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CountdownTimer from '../CountdownTimer/CountdownTimer';
+import { MyContext } from '../../../../Contaxt/Context';
 // import timeBg from '../../../../../public/img/event/icon/timeBg.png';
 
 const EventAbout = ({ about }) => {
@@ -13,6 +15,9 @@ const EventAbout = ({ about }) => {
   const [mins, setMins] = useState(0);
   const [secs, setSecs] = useState(0);
   const deadline = about.lastDate;
+  const { language } = useContext(MyContext)
+  
+  console.log(about)
 
 
   const getTime = () => {
@@ -35,20 +40,20 @@ const EventAbout = ({ about }) => {
         <div className=" gap-3">
           <div className="flex items-center gap-3">
             <img src={pointIcon} className="" alt="" />
-            <EventTitle title="Whats about event" />
+            <EventTitle title={language == 'bn' ? 'ইভেন্ট সম্পর্কে জানুন' : 'Whats about event'} />
           </div>
           <span>
 
-            <p>{about.details}</p><br /><br />
+            <p>{language == 'bn' ? about.about.detailsBN : about.about.detailsEN} </p><br /><br />
             <Link to="/registration" className="bg-[#D70404] my-btn text-white px-10 py-4 rounded-lg">
-              Register
+              {language == 'bn' ? 'রেজিস্টার' : 'Register'}
             </Link>
           </span>
         </div>
       </div>
       <div className="col-span-3 lg:col-span-1">
         <h4 className="text-[22px] font-bold text-[#404040] mt-5 md:mt-0">
-          Upcomming
+          {language == 'bn' ? 'সময় বাকি' : 'Upcomming'}
         </h4>
         {
           about.eventTime && <CountdownTimer time={about.eventTime} />
