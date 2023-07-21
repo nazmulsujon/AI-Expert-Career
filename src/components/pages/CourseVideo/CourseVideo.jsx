@@ -16,9 +16,11 @@ import {
     BigPlayButton,
     // BigPlayButton
 } from 'video-react';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { MyContext } from '../../../Contaxt/Context';
 
 const CourseVideo = () => {
+    const { language } = useContext(MyContext)
     const [videoSource, setVideoSource] = useState("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4");
     const [selected, setSelected] = useState('Introduction to Web designing preview topic1');
     const playerRef = useRef(null);
@@ -31,7 +33,6 @@ const CourseVideo = () => {
     useEffect(() => {
         if (playerRef.current) {
             const videoElement = playerRef.current.video.video;
-
             videoElement.src = videoSource;
             videoElement.load();
         }
@@ -160,8 +161,8 @@ const CourseVideo = () => {
     ]
 
     return (
-        <div className='grid grid-cols-3 gap-x-4 min-h-screen'>
-            <div className='col-span-2'>
+        <div className='grid grid-cols-3 gap-x-4 mt-24 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl lg:px-8'>
+            <div className='col-span-12 md:col-span-2'>
                 <h3 className='text-[24px] font-bold'>After Effects - Animated Infographic Video & Data Visualisation</h3>
                 <Player ref={playerRef} poster="/assets/poster.png" autoPlay>
                     <source src={videoSource} />
@@ -175,16 +176,22 @@ const CourseVideo = () => {
                         <VolumeMenuButton />
                     </ControlBar>
                 </Player>
-                <div className='flex mt-3 w-full justify-between items-center'>
+                <div className='lg:flex mt-3 w-full justify-between items-center'>
                     <h3 className='text-xl font-bold'>How to animate an object filling up to make</h3>
                     <div>
-                        <button className='py-[10px]  rounded-[7px] px-6 border border-[#ED1B24]'>Previous</button>
-                        <button className='py-[10px] ml-5 rounded-[7px] px-6 text-white border border-[#ED1B24] bg-[#ED1B24]'>Next</button>
+                        <button className='py-[10px]  rounded-[7px] px-6 border border-[#ED1B24]'>
+                        {language === 'bn' ? 'পূর্ববর্তী' : "Previous"}
+                            </button>
+                        <button className='py-[10px] ml-5 rounded-[7px] px-6 text-white border border-[#ED1B24] bg-[#ED1B24]'>
+                        {language === 'bn' ? 'পূর্ববর্তী' : "Next"}
+                            </button>
                     </div>
                 </div>
             </div>
-            <div className='col-span-1 ' >
-                <h3 className='text-[24px] font-semibold'>Class List</h3>
+            <div className='col-span-12 md:col-span-1 mt-5 md:mt-0' >
+                <h3 className='text-[24px] font-semibold'>
+                {language === 'bn' ? 'ক্লাস লিস্ট' : " Class List"}
+                   </h3>
                 <div className="w-full ">
                     <div className=" w-full  bg-black/20 p-3 h-[523px]" id='listDiv'>
                         {moduleVideos.map(item => <Disclosure key={item.id} className='mb-2'>
