@@ -45,9 +45,15 @@ const EventAbout = ({ about }) => {
           <span>
 
             <p>{language == 'bn' ? about.about.detailsBN : about.about.detailsEN} </p><br /><br />
-            <Link to="/registration" className="bg-[#D70404] my-btn text-white px-10 py-4 rounded-lg">
-              {language == 'bn' ? 'রেজিস্টার' : 'Register'}
-            </Link>
+            <div className="w-40 h-12 text-center pb-[20px] group relative inline-bloc shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
+                    
+              <span className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"></span>
+
+              <Link to="/registration" className="relative text-lg font-bold text-white transition-colors  group-hover:text-red-600 flex items-center justify-center">
+                  {language == 'bn' ? 'রেজিস্টার' : 'Register'}
+              </Link>
+
+            </div>
           </span>
         </div>
       </div>

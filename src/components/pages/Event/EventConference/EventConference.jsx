@@ -18,7 +18,15 @@ const EventConference = ({ eventConference, event }) => {
           <img src={pointIcon} className='' alt="" />
           <EventTitle title={language == 'bn' ? 'নীতিমালা এবং সময়সুচি' : 'Conference and Schedule'} />
         </div>
-        <Link onClick={()=> setEventData(event)} to="/buy_ticket" className="flex justify-center my-btn md:mt-0 mt-3 items-center gap-3 font-semibold text-white md:w-[200px] w-full  bg-[#DD0A3D] px-4 py-2 rounded-lg"><img src={ticket} alt="" /> {language == 'bn' ? 'টিকেট কিনুন' : 'Buy a ticket'}</Link>
+        <div className="w-48 h-12 text-center pb-[20px] group relative inline-bloc shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
+                    
+              <span className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"></span>
+
+              <Link onClick={() => setEventData(event)} to="/buy_ticket" className="relative text-lg font-bold text-white transition-colors  group-hover:text-red-600 flex items-center justify-center">
+                <img src={ticket} alt="" className="mr-4"/> {language == 'bn' ? 'টিকেট কিনুন' : 'Buy a ticket'}
+              </Link>
+
+            </div>
       </div>
 
       <div className="flex flex-row md:flex-col w-full my-7 md:my-0 ">
