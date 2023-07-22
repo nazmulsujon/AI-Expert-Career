@@ -12,10 +12,13 @@ import { BiDislike, BiLike } from "react-icons/bi";
 import { AiFillDislike, AiFillLike } from "react-icons/ai";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useContext } from 'react';
+import { MyContext } from '../../../../Contaxt/Context';
 
 const IndividualBlog = () => {
   const [like, setLike] = useState(false)
   const [disLike, setDisLike] = useState(false)
+  const {language} = useContext(MyContext)
   const allComments = [
     {
       author: "Robert Albert",
@@ -73,18 +76,10 @@ const IndividualBlog = () => {
           <div className="pt-[9px]">
             <img src={demo} alt="" className="rounded pb-12" />
             <p className="font-semibold text-xm">
-              AI is the word of the year, with ChatGPT making waves since it was
-              initially introduced in November 2022. With every new iteration of
-              the powerful tool, users managed to find innovative ways of using
-              the all-powerful AI bot to speed up and simplify their work. AI is
-              the word of the year, with ChatGPT making waves since it was
-              initially introduced in November 2022. With every new iteration of
-              the powerful tool, users managed to find innovative ways of using
-              the all-powerful AI bot to speed up and simplify their work. AI is
-              the word of the year, with ChatGPT making waves since it was
-              initially introduced in November 2022. With every new iteration of
-              the powerful tool, users managed to find innovative ways of using
-              the all-powerful AI bot to speed up and simplify their work.
+              {language == 'bn' ?
+              'আপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছেআপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছেআপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছে আপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছেআপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছেআপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছে আপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছেআপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছেআপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছে'
+                :
+              'AI is the word of the year, with ChatGPT making waves since it was initially introduced in November 2022. With every new iteration of the powerful tool, users managed to find innovative ways of using the all-powerful AI bot to speed up and simplify their work. AI is the word of the year, with ChatGPT making waves since it was initially introduced in November 2022. With every new iteration of the powerful tool, users managed to find innovative ways of using the all-powerful AI bot to speed up and simplify their work. AI is the word of the year, with ChatGPT making waves since it was initially introduced in November 2022. With every new iteration of the powerful tool, users managed to find innovative ways of using the all-powerful AI bot to speed up and simplify their work.'}
             </p>
           </div>
           <div className="mt-[40px] flex justify-between items-center">
@@ -114,15 +109,15 @@ const IndividualBlog = () => {
               <img src={avatar} alt="" className="" />
               <input
                 type="text"
-                placeholder="Add a comment"
+                placeholder={language == 'bn' ? 'কমেন্ট করুন' : 'Add a comment'}
                 className="border-none w-full bg-[#eefaf993] text-lg font-bold p-2"
               />
             </div>
             <div className="flex flex-row-reverse gap-7 pt-2">
               <button className="bg-[#FF0944] w-[130px] text-white rounded font-bold">
-                Comment
+                {language == 'bn' ? 'ঙ্কমেন্ট' : 'Comment'}
               </button>
-              <button className="font-bold">Cancel</button>
+              <button className="font-bold">{language == 'bn' ? 'বাতিল করুন' : 'Cancel'}</button>
             </div>
           </div>
           <div>
@@ -135,12 +130,12 @@ const IndividualBlog = () => {
       </div>
 
       <div>
-        <div>
+        <div className=" mt-20">
           <h2 className="md:text-[35px] text-xl font-bold">
-            You may interest also those topics
+            {language == 'bn' ? 'একই সম্পর্কিত আরো কিছু টপিক্স' : 'You may interest also those topics'}
           </h2>
 
-          <div className="pb-[150px] pt-[35px]">
+          <div className="md:pb-[150px] pt-[35px]">
             <IndividualBlogCard></IndividualBlogCard>
           </div>
 
