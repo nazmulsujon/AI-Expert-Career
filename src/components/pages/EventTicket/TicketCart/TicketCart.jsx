@@ -11,8 +11,8 @@ import { FiCopy } from 'react-icons/fi';
 import { useContext, useEffect } from 'react';
 import { MyContext } from '../../../../Contaxt/Context';
 const TicketCart = () => {
-    const {eventData, language} = useContext(MyContext)
-    
+    const {eventData} = useContext(MyContext)
+    console.log(eventData)
         useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -41,7 +41,7 @@ const TicketCart = () => {
 
                     <div className="absolute bottom-[30px] left-8">
                         <h3 className='font-semibold text-[#656565] text-[15px]'>
-                            <span className=''>Holder name :</span>  {eventData?.holderInfo.name}
+                            <span className=''>Holder name :</span>  {eventData?.holderInfo?.name}
                         </h3>
                         <h3 className='font-semibold text-[#656565] text-[15px]'>
                             <span className=''>Ticket Id :</span> {eventData.ticketId}
@@ -92,13 +92,13 @@ const TicketCart = () => {
                     <img src={qr} className='m-auto w-[114px] h-[114px]' alt="" />
                         <div className="w-40 h-12 text-center pb-[20px] mt-10 mx-auto group relative inline-bloc shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
                     
-                        <span className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"></span>
+                            <span className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"></span>
 
-                        <span className="relative text-lg font-bold text-white transition-colors  group-hover:text-red-600 flex items-center justify-center">
-                            <BiDownload className='font-bold text-lg mr-4' /> Download
-                        </span>
+                            <span className="relative text-lg font-bold text-white transition-colors  group-hover:text-red-600 flex items-center justify-center">
+                                <BiDownload className='font-bold text-lg mr-4' /> Download
+                            </span>
 
-                    </div>
+                        </div>
                 </div>           
             </div>
 
