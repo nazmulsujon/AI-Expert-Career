@@ -6,7 +6,7 @@ const AlternativeForm = () => {
         window.scrollTo(0, 0);
     }, []);
     return (
-        <div className="px-4 pt-2 pb-20 mx-auto max-w-full md:max-w-full lg:max-w-screen-xl xl:max-w-screen-xl 2xl:max-w-screen-2xl md:px-24 lg:px-20 2xl:px-8">
+        <div className="px-4 pt-2 pb-20 mt-20 mx-auto max-w-full md:max-w-full lg:max-w-screen-xl xl:max-w-screen-xl 2xl:max-w-screen-2xl md:px-24 lg:px-20 2xl:px-8">
             <header className="py-20">
                 <h1 className="font-bold text-[35px] text-center">Make an Appointment of Consultancy</h1>
                 <p className="text-center">Lorem Ipsum as their default model text, and a search for lorem ipsum dd will uncover </p>
