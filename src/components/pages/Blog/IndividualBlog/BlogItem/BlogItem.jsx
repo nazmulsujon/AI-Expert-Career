@@ -1,7 +1,11 @@
 import BlogOption from "./BlogOption";
+import { useContext } from 'react';
+import { MyContext } from '../../../../../Contaxt/Context';
 
     
 const BlogItem = () => {
+
+  const {language} = useContext(MyContext)
   
 const data = [
       {
@@ -151,7 +155,7 @@ const data = [
   return (
      <div className="">
           <h2 className="text-3xl font-bold">
-              Our more blogs
+              {language == 'bn' ? 'বিষয়সমূহ -' : 'Our more blogs'}
           </h2>
             <ul className="mt-3">
               {
