@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import itemImg from '../../../assets/shopingCart/Rectangle 152.png'
 
 import { BiX } from "react-icons/bi";
+import { MyContext } from '../../../Contaxt/Context';
 const ItemList = () => {
+
+    const {language} = useContext(MyContext)
+
     const [items, setItems] = useState([
         {
             img: itemImg,
@@ -47,8 +51,8 @@ const ItemList = () => {
     return (
         <div className="md:ml-4">
             <div className='flex justify-between text-xl font-semibold border-b border-black pb-3'>
-                <h4>Item List</h4>
-                <h4>Price</h4>
+                <h4 className=' text-center md:text-left'>{language == 'bn' ? 'সংগ্রহের তালিকা' : 'Item List'}</h4>
+                <h4>{language == 'bn' ? 'মূল্য' : 'Price'}</h4>
             </div>
             <div className='mt-5'>
                 {items.map((item) =>
@@ -75,7 +79,7 @@ const ItemList = () => {
                     </div>
                 )}
                 <button onClick={() => setItems([])} className='font-semibold py-3 px-7 bg-[#FF0944] rounded text-white mt-9'>
-                    Clear Cart
+                    {language == 'bn' ? 'কার্ড মুছুন' : 'Clear Cart'}
                 </button>
             </div>
 

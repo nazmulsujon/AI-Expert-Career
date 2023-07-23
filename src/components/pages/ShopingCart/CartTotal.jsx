@@ -1,8 +1,11 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useContext, useState } from "react";
 import { BsCheck } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { MyContext } from "../../../Contaxt/Context";
 const CartTotal = ({ setIsConfirm, isConfirm }) => {
-    const [valid, setValid] = useState(false)
+    const [valid, setValid] = useState(true)
+    const {language} = useContext(MyContext)
     return (
         <div>
             <h3 className="text-xl font-bold text-center -mt-[10px]">Cart Totals</h3>
@@ -27,7 +30,7 @@ const CartTotal = ({ setIsConfirm, isConfirm }) => {
                 </div>
                 <div className="mt-8">
                     <Link to={'/payment'}>
-                        <button onClick={() => setIsConfirm(!isConfirm)} className="py-[13px] w-full rounded bg-[#FF0944] text-white text-sm font-bold">Confirm the order</button>
+                        <button onClick={() => setIsConfirm(!isConfirm)} className="py-[13px] w-full rounded bg-[#FF0944] text-white text-sm font-bold">{language == 'bn' ? 'পেমেন্ট নিশ্চিত করুন' : 'Confirm the order'}</button>
                     </Link>
                 </div>
             </div>
