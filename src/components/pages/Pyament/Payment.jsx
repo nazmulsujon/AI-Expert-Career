@@ -1,7 +1,7 @@
 import ProgressBar from '../ShopingCart/ProgressBar';
 import copy from '../../../assets/Payment/Vector.png'
 import { BiLockAlt } from "react-icons/bi";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import bkashLogo from '../../../assets/Payment/bkash-payment.png'
 import nogodLogo from '../../../assets/Payment/Rectangle 285.png'
 import masterLogo from '../../../assets/Payment/Rectangle 286.png'
@@ -9,9 +9,11 @@ import dutchLogo from '../../../assets/Payment/Rectangle 287.png'
 import visaLogo from '../../../assets/Payment/Rectangle 288.png'
 import { BsCheck } from "react-icons/bs";
 import { useEffect } from 'react';
+import { MyContext } from '../../../Contaxt/Context';
 const Payment = () => {
     const [isBkash, setIsBkash] = useState('')
     const [valid, setValid] = useState(false)
+    const {language} = useContext(MyContext)
     // scrollTo
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -23,7 +25,7 @@ const Payment = () => {
                 <div className='md:flex mt-[70px] justify-center md:gap-x-[30px]  px-3 lg:px-0'>
                     <div className='w-full md:w-[448px]  border-[0.5px] border-black py-[33px] px-11 h-fit'>
                         <div className='flex items-center'>
-                            <h2 className='font-bold text-[24px]'>Order ID MMS99000047</h2>
+                            <h2 className='font-bold text-xl md:text-[24px]'>Order ID MMS99000047</h2>
                             <img src={copy} alt="" className='h-[22px]' />
                         </div>
                         <div className='text-sm mt-8 font-bold flex justify-between items-center border-b border-dashed border-[#ED1B23] pb-4'>
@@ -41,7 +43,7 @@ const Payment = () => {
                     </div>
                     <div className='w-full md:w-[513px] mt-[30px] md:mt-0 border-[0.5px] border-black py-[33px] px-5'>
                         <div className='flex justify-between items-center'>
-                            <h3 className='text-xl font-bold'>Select your payment method</h3>
+                            <h3 className='text-xl font-bold'>{language == 'bn' ? 'পেমেন্ট নিশ্চিত করুন' : 'Select your payment method'}</h3>
                             <div className='flex items-center bg-[#ED1B23]/10 px-[6px] py-2.5 rounded-[20px]'>
                                 <div className='h-[22px] w-[22px] rounded-full bg-[#ED1B23]/30 flex justify-center items-center mr-1.5'>
                                     <BiLockAlt />
@@ -78,7 +80,8 @@ const Payment = () => {
                         </div>
 
                         <div className='flex justify-center items-center mt-5'>
-                            <button className='px-[94px] py-[13px] bg-[#FF0944] rounded text-white text-sm font-bold'>Continue payment</button>
+                            {!valid && <button className='px-[94px] py-[13px] bg-[#ff094299] rounded text-white text-sm font-bold' disabled>{language == 'bn' ? 'এগিয়ে যান' : 'Continue payment'}</button>}
+                            {valid && <button className='px-[94px] py-[13px] bg-[#FF0944] rounded text-white text-sm font-bold'>{language == 'bn' ? 'এগিয়ে যান' : 'Continue payment'}</button>}
                         </div>
                     </div>
                 </div>
