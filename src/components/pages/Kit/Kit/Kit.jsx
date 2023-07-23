@@ -157,15 +157,15 @@ const Kit = () => {
 
       {activeSection === "Ai Tools" && (
         <div className="">
-          <h1 className="text-3xl font-bold mb-4">Ai tool Heading</h1>
+          <h1 className="text-3xl font-bold mb-4">
+            {language === "bn"
+              ? "দৈনন্দিন কাজের গতি বাড়াতে ব্যবহার করুন এ আই টুলস!"
+              : "Ai tool Heading"}
+          </h1>
           <p>
-            Lorem Ipsum as their default model text, and a search for lorem
-            ipsum will uncover many web sites still in their infancy. Various
-            versions have evolved over the years, sometimes by accident,
-            sometimes Lorem Ipsum as their default model text, and a search for
-            lorem ipsum will uncover many web sites still in their infancy.
-            Various versions have evolved over the years, sometimes by accident,
-            sometimes Lorem
+            {language === "bn"
+              ? "আপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছে দিতে পারে সফলতার শীর্ষে। আমাদের এ আই রোডম্যাপ এবং কনসাল্টেন্সি সার্ভিস বিভিন্ন এ এই এক্সপার্টদের দ্বারা তৈরি করা। আপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছে দিতে পারে সফলতার শীর্ষে। আমাদের এ আই রোডম্যাপ এবং কনসাল্টেন্সি সার্ভিস বিভিন্ন এ এই এক্সপার্টদের দ্বারা তৈরি করা। আপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা"
+              : "Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident,sometimes Lorem Ipsum as their default model text, and a search folorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident,metimes Lorem"}
           </p>
         </div>
       )}
@@ -190,7 +190,6 @@ const Kit = () => {
                     {language === "bn" ? "সর্বাধিক রিভিউ" : "Most Reviews"}
                   </option>
                   <option value="Other">
-                    {" "}
                     {language === "bn" ? "অন্যান্য" : "Other"}
                   </option>
                 </select>
@@ -268,7 +267,7 @@ const Kit = () => {
                     <div className="flex justify-center items-center">
                       <Link to={`/aitoolsdetails/${data.id}`}>
                         <button className="mt-4 bg-[#FF000B]/80 border border-[#FF000B] hover:bg-white hover:text-black text-xl text-white w-[185px] py-3 ">
-                          Read
+                          {language === "bn" ? "বিস্তারিত" : "details"}
                         </button>
                       </Link>
                     </div>
