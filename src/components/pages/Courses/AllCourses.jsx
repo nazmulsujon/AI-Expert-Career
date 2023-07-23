@@ -158,9 +158,9 @@ const AllCourses = () => {
             
             <span className="absolute inset-y-0 left-0 w-[2px]  bg-[#ede2e3] transition-all group-hover:w-full"></span>
 
-            <span className="relative text-xl font-bold text-white transition-colors  group-hover:text-red-600">
+            <Link to="/free_courses" className="relative text-xl font-bold text-white transition-colors  group-hover:text-red-600">
               {language == 'bn' ? 'আরো দেখুন' : 'See More'}
-            </span>
+            </Link>
 
           </div>
 
