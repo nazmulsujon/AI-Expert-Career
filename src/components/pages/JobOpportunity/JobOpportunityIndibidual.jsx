@@ -205,7 +205,7 @@ const JobOpportunityIndibidual = () => {
           <p className=" mb-3"> − {indibidualJob.Job_Apply_Requirement}</p>
           <p className=" mb-3"> − {indibidualJob.Job_Apply_Requirement}</p>
           <div>
-            <button className="my-btn  text-white bg-[#ed1b24] px-12 py-2 mt-5 rounded">
+            <button className="my-btn text-white bg-[#ed1b24] px-12 py-2 mt-5 rounded">
               {language === "bn" ? "তথ্যসূত্র" : "Apply"}
             </button>
           </div>
