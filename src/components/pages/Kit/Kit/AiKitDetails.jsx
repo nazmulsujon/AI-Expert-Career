@@ -132,8 +132,12 @@ const AiKitDetails = () => {
         </table>
       </div>
       <div className="mt-16">
-        <h1 className="text-2xl font-bold">Browse related categories</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 space-y-4 md:space-y-0  text-center py-8 mt-8">
+        <h1 className="text-2xl font-bold">
+          {language === "bn"
+            ? "একই ক্যাটেগোরির আরো কিছু প্রোডাক্ট"
+            : "Browse related categories"}
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 space-y-4 md:space-y-0  text-center py-8 mt-8">
           <div className=" hover:bg-white shadow  hover:text-[#ED1B24]/90  flex justify-center hover:shadow-md py-8 px-16 duration-200 ">
             <div>
               <SlBriefcase className="text-[120px]" />
