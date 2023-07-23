@@ -40,6 +40,7 @@ import AiConsultanProfile from '../pages/AiConsultantProfile/AiConsultanProfile'
 import Kit from '../pages/Kit/Kit/Kit';
 import AiKitDetails from '../pages/Kit/Kit/AiKitDetails';
 import AiToolsDetails from '../pages/Kit/Kit/AiToolsDetails';
+import FreeCourses from '../pages/Courses/FreeCourses';
 
 export const router = createBrowserRouter([
 
@@ -108,6 +109,10 @@ export const router = createBrowserRouter([
       {
         path: '/courses',
         element: <Courses></Courses>,
+      },
+      {
+        path: '/free_courses',
+        element: <FreeCourses />,
       },
       {
         path: '/individualCourse/:id',
