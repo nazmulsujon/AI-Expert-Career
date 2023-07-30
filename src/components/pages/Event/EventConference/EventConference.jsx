@@ -10,7 +10,7 @@ import { MyContext } from "../../../../Contaxt/Context";
 
 
 const EventConference = ({ eventConference, event }) => {
-  const {setEventData, language} = useContext(MyContext);
+  const { setEventData, language } = useContext(MyContext);
   return (
     <div className="py-8">
       <div className="md:flex justify-between items-center">
@@ -18,15 +18,15 @@ const EventConference = ({ eventConference, event }) => {
           <img src={pointIcon} className='' alt="" />
           <EventTitle title={language == 'bn' ? 'নীতিমালা এবং সময়সুচি' : 'Conference and Schedule'} />
         </div>
-        <div className="w-48 h-12 text-center pb-[20px] group relative inline-bloc shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
-                    
-              <span className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"></span>
+        <div className="w-48 h-12 text-center pb-[20px] group relative inline-bloc  rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
 
-              <Link onClick={() => setEventData(event)} to="/buy_ticket" className="relative text-lg font-bold text-white transition-colors  group-hover:text-red-600 flex items-center justify-center">
-                <img src={ticket} alt="" className="mr-4"/> {language == 'bn' ? 'টিকেট কিনুন' : 'Buy a ticket'}
-              </Link>
+          <span className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"></span>
 
-            </div>
+          <Link onClick={() => setEventData(event)} to="/buy_ticket" className="relative text-lg font-bold text-white transition-colors  group-hover:text-red-600 flex items-center justify-center">
+            <img src={ticket} alt="" className="mr-4" /> {language == 'bn' ? 'টিকেট কিনুন' : 'Buy a ticket'}
+          </Link>
+
+        </div>
       </div>
 
       <div className="flex flex-row md:flex-col w-full my-7 md:my-0 ">

@@ -54,7 +54,7 @@ const Signup = () => {
 
                   <button
                     type="submit"
-                    className="group relative   shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] w-full py-[14px] bg-[#ED1B24] "
+                    className="group relative    rounded overflow-hidden border border-[#ED1B24] w-full py-[14px] bg-[#ED1B24] "
 
                   >
                     <span
@@ -77,7 +77,7 @@ const Signup = () => {
                 </h2>
                 <center>
                   <Link
-                    className="group relative   shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-[60px] py-[14px] bg-[#ED1B24]"
+                    className="group relative    rounded overflow-hidden border border-[#ED1B24] px-[98px] py-[13px] bg-[#ED1B24]"
                     to="/login"
                   >
                     <span

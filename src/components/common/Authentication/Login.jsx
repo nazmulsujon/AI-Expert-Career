@@ -59,7 +59,7 @@ const Login = () => {
                   />
                   <button
                     type="submit"
-                    className="group relative shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] w-full py-[14px] bg-[#ED1B24] outline-none"
+                    className="group relative  rounded overflow-hidden border border-[#ED1B24] w-full py-[14px] bg-[#ED1B24] outline-none"
                   >
                     <span
                       className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"
@@ -82,7 +82,7 @@ const Login = () => {
                 {/* sign up button  */}
                 <center>
                   <Link
-                    className="group relative  shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-[60px] py-[14px] bg-[#ED1B24] focus:outline-none "
+                    className="group relative   rounded overflow-hidden border border-[#ED1B24] px-[98px] py-[13px] bg-[#ED1B24] focus:outline-none "
                     to="/signup"
                   >
                     <span

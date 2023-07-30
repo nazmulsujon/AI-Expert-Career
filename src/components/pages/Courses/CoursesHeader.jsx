@@ -46,7 +46,7 @@ const CoursesHeader = () => {
                   Ipsum.
                 </p>
 
-                <div className="w-40 text-center mt-5 group relative inline-bloc shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
+                <div className="w-40 text-center mt-5 group relative inline-bloc  rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
 
                   <span
                     className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"
@@ -92,7 +92,7 @@ const CoursesHeader = () => {
                   Ipsum.
                 </p>
 
-                <div className="w-40 text-center mt-5 group relative inline-bloc shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
+                <div className="w-40 text-center mt-5 group relative inline-bloc  rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
 
                   <span
                     className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"
@@ -138,7 +138,7 @@ const CoursesHeader = () => {
                   Ipsum.
                 </p>
 
-                <div className="w-40 text-center mt-5 group relative inline-bloc shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
+                <div className="w-40 text-center mt-5 group relative inline-bloc  rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
 
                   <span
                     className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"

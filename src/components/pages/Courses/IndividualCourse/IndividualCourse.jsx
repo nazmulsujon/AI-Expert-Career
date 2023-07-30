@@ -150,18 +150,18 @@ const IndividualCourse = () => {
     <section className="px-4 py-2 mx-auto max-w-full text-md md:max-w-full lg:max-w-screen-xl xl:max-w-screen-xl 2xl:max-w-screen-2xl lg:px-20 2xl:px-8">
 
       <div className="grid grid-rows-2 lg:grid-cols-8 sm:gap-y-12 lg:gap-x-12 mt-[100px]">
-        
+
         {/* left side  */}
         <div className="col-span-8 row-span-3 lg:col-span-5">
           <p className=" font-bold text-[#4E4E4E] pb-4">
-            {language == 'bn'? 'আপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছে দিতে পারে সফলতার শীর্ষে। আমাদের এ আই রোডম্যাপ এবং কনসাল্টেন্সি সার্ভিস বিভিন্ন এ এই এক্সপার্টদের দ্বারা তৈরি করা' :'No matter what background you are a student or learner, the right roadmap can take you to the pinnacle of success. Our AI roadmap and consultancy services are developed by these experts in various fields'}
+            {language == 'bn' ? 'আপনি যেকোনো বেকগ্রাউন্ডের স্টুডেন্ট বা লার্নার হোন না কেনো, সঠিক রোডম্যাপ পারে আপনাকে আপনাকে পৌছে দিতে পারে সফলতার শীর্ষে। আমাদের এ আই রোডম্যাপ এবং কনসাল্টেন্সি সার্ভিস বিভিন্ন এ এই এক্সপার্টদের দ্বারা তৈরি করা' : 'No matter what background you are a student or learner, the right roadmap can take you to the pinnacle of success. Our AI roadmap and consultancy services are developed by these experts in various fields'}
           </p>
 
           {/* course contents  */}
           <div>
 
             <span className="lg:text-2xl font-bold">{language == 'bn' ? 'কোর্স মডিউল' : 'Course Contents'}</span>
-            
+
             <div className=" rounded-tr-[10px] rounded-bl-[10px] bg-white w-full lg:w-[692px] mt-4">
 
               {courseContent?.map((course, i) => (
@@ -173,7 +173,7 @@ const IndividualCourse = () => {
                     <Disclosure>
                       {({ open }) => (
                         <>
-                          
+
                           <Disclosure.Button className="w-full flex space-x-3 lg:flex items-center justify-between px-4 pb-6 text-left border-b-2 border-dashed border-black">
 
                             <span className="text-[#DE000A] font-bold lg:text-2xl">
@@ -181,14 +181,14 @@ const IndividualCourse = () => {
                             </span>
 
                             <div className="flex gap-4">
-                              <div className="w-20 lg:w-40 text-center group relative inline-bloc shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
+                              <div className="w-20 lg:w-40 text-center group relative inline-bloc  rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
 
                                 <span
-                                className="absolute inset-y-0 left-0 w-[2px]  bg-[#ffffff] transition-all group-hover:w-full"
+                                  className="absolute inset-y-0 left-0 w-[2px]  bg-[#ffffff] transition-all group-hover:w-full"
                                 ></span>
-                                
+
                                 <span className="relative text-sm font-medium text-white transition-colors  group-hover:text-red-600">
-                                  {language == 'bn'? 'দেখুন' :'Checkout'}
+                                  {language == 'bn' ? 'দেখুন' : 'Checkout'}
                                 </span>
 
                               </div>
@@ -348,37 +348,37 @@ const IndividualCourse = () => {
           <div>
             <h2 className="font-bold lg:text-2xl mt-[35px]">{language == 'bn' ? 'যেকোনো জিজ্ঞাসা' : 'FAQ'}</h2>
             <div className=" rounded-tr-[10px] rounded-bl-[10px] bg-white lg:w-[692px] mt-4">
-                {faqs?.map((faq, i) => (
-                  <div key={i} className="pt-5 ">
-                    <div className=" rounded-[10px] p-2">
-                      <Disclosure>
-                        {({ open }) => (
-                          <>
-                            <Disclosure.Button className="w-full flex justify-between px-4 py-2 text-left border-b-2 border-dashed border-black">
-                              <span className="text-[#DE000A] font-bold lg:text-2xl">
-                                {faq.question}
-                              </span>
-                              <div className="flex gap-4">
-                                <ChevronUpIcon
-                                  className={`${open ? 'rotate-180 transform' : ''
-                                    } h-10 w-10 text-[#DE000A] font-bold`}
-                                />
-                              </div>
-                            </Disclosure.Button>
-                            <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                                <li key={i} className="text-xl">
-                                  {faq.answer}
-                                </li>
-                            </Disclosure.Panel>
-                          </>
-                        )}
-                      </Disclosure>
-                    </div>
+              {faqs?.map((faq, i) => (
+                <div key={i} className="pt-5 ">
+                  <div className=" rounded-[10px] p-2">
+                    <Disclosure>
+                      {({ open }) => (
+                        <>
+                          <Disclosure.Button className="w-full flex justify-between px-4 py-2 text-left border-b-2 border-dashed border-black">
+                            <span className="text-[#DE000A] font-bold lg:text-2xl">
+                              {faq.question}
+                            </span>
+                            <div className="flex gap-4">
+                              <ChevronUpIcon
+                                className={`${open ? 'rotate-180 transform' : ''
+                                  } h-10 w-10 text-[#DE000A] font-bold`}
+                              />
+                            </div>
+                          </Disclosure.Button>
+                          <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+                            <li key={i} className="text-xl">
+                              {faq.answer}
+                            </li>
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
           </div>
-          
+
         </div>
 
         {/* right side  */}
@@ -426,7 +426,7 @@ const IndividualCourse = () => {
             </button>
           </div>
         </div>
-        
+
       </div>
 
       {/* Related Course  */}

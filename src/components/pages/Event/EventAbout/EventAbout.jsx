@@ -16,7 +16,7 @@ const EventAbout = ({ about }) => {
   const [secs, setSecs] = useState(0);
   const deadline = about.lastDate;
   const { language } = useContext(MyContext)
-  
+
   console.log(about)
 
 
@@ -45,12 +45,12 @@ const EventAbout = ({ about }) => {
           <span>
 
             <p>{language == 'bn' ? about.about.detailsBN : about.about.detailsEN} </p><br /><br />
-            <div className="w-40 h-12 text-center pb-[20px] group relative inline-bloc shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
-                    
+            <div className="w-40 h-12 text-center pb-[20px] group relative inline-bloc  rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
+
               <span className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"></span>
 
               <Link to="/registration" className="relative text-lg font-bold text-white transition-colors  group-hover:text-red-600 flex items-center justify-center">
-                  {language == 'bn' ? 'রেজিস্টার' : 'Register'}
+                {language == 'bn' ? 'রেজিস্টার' : 'Register'}
               </Link>
 
             </div>

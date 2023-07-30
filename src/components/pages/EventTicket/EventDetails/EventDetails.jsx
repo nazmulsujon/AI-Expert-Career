@@ -5,7 +5,7 @@ import { MyContext } from '../../../../Contaxt/Context';
 
 const EventDetails = () => {
 
-    const {language} = useContext(MyContext)
+    const { language } = useContext(MyContext)
 
     return (
         <div className="grid md:grid-cols-2 mt-12 gap-12">
@@ -19,14 +19,14 @@ const EventDetails = () => {
             <div className="">
                 <form className="bg-white p-10">
                     <h1 className="text-black font-bold text-[27px] ">Register now</h1>
-                        <br /><br />
-                    <input className='border-b-2 border-[gray] w-full ' type="text" placeholder={language == 'bn' ? 'আপনার পুরো নাম*' : 'enter your name'}/> <br />
-                    <input className='border-b-2 border-[gray] w-full mt-9' type="email" placeholder={language == 'bn' ? 'আপনার ইমেইল এড্রেস*' : 'enter your email'}/> <br />
-                    <input className='border-b-2 border-[gray] w-full mt-9 text-[#ED1B24]' type="tell" placeholder={language == 'bn' ? 'ফোন নাম্বার *' : 'mobile number'}/> <br />
-                    <input className='border-b-2 border-[gray] w-full mt-9' type="password" placeholder={language == 'bn' ? 'আপনার পাসওয়য়ার্ড দিন*' : 'enter your password'}/> <br />
-                    
-                    <div className="w-40 h-12 text-center pb-[20px] mt-10 mx-auto group relative inline-bloc shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
-                    
+                    <br /><br />
+                    <input className='border-b-2 border-[gray] w-full ' type="text" placeholder={language == 'bn' ? 'আপনার পুরো নাম*' : 'enter your name'} /> <br />
+                    <input className='border-b-2 border-[gray] w-full mt-9' type="email" placeholder={language == 'bn' ? 'আপনার ইমেইল এড্রেস*' : 'enter your email'} /> <br />
+                    <input className='border-b-2 border-[gray] w-full mt-9 text-[#ED1B24]' type="tell" placeholder={language == 'bn' ? 'ফোন নাম্বার *' : 'mobile number'} /> <br />
+                    <input className='border-b-2 border-[gray] w-full mt-9' type="password" placeholder={language == 'bn' ? 'আপনার পাসওয়য়ার্ড দিন*' : 'enter your password'} /> <br />
+
+                    <div className="w-40 h-12 text-center pb-[20px] mt-10 mx-auto group relative inline-bloc  rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
+
                         <span className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"></span>
 
                         <span className="relative text-xl font-bold text-white transition-colors  group-hover:text-red-600">

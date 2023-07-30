@@ -49,7 +49,7 @@ const HeroAria = () => {
             <div className="flex flex-col md:flex-row  justify-start w-3/5 md:w-full md:items-center gap-8 mt-6">
 
               <Link
-                className="group relative inline-bloc shadow-inner shadow-lg shadow-gray-600 shadow-[#] rounded overflow-hidden border border-[#ED1B24] px-8 py-2 bg-red-600 focus:outline-none focus:ring"
+                className="group relative inline-bloc shadow-inner  shadow-[#] rounded overflow-hidden border border-[#ED1B24] px-8 py-2 bg-red-600 focus:outline-none focus:ring"
                 to="/download"
               >
                 <span

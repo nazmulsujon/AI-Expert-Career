@@ -11,26 +11,26 @@ import { FiCopy } from 'react-icons/fi';
 import { useContext, useEffect } from 'react';
 import { MyContext } from '../../../../Contaxt/Context';
 const TicketCart = () => {
-    const {eventData} = useContext(MyContext)
+    const { eventData } = useContext(MyContext)
     console.log(eventData)
-        useEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-        return (
+    return (
         <div id='idStart'>
-                <div className="md:grid hidden md:grid-cols-3 md:mt-[-150px] mt-[-200px]">
+            <div className="md:grid hidden md:grid-cols-3 md:mt-[-150px] mt-[-200px]">
                 <div className="col-span-2 relative bg-[white] p-8 md:rounded-l-3xl md:h-auto h-[370px] ">
                     <img src={logoLg} className='absolute top-0 left-0 bottom-0 right-0 m-auto' alt="" />
                     <h1 className="text-3xl text-[#FF003D] font-bold">{eventData.title}</h1><br />
                     <div className="flex justify-between items-end">
-                            <div className="">
-                                <span className="flex item-center gap-2  mt-2 font-bold text-[#525252]">
-                                    <MdAccessAlarms className='text-[18px] text-[#FE0C0C]' /> Date and time
-                                </span>
-                                <p className="text-[#3753E8] font-bold text-[20px] mt-1">{eventData.date}</p>
-                            </div>
+                        <div className="">
+                            <span className="flex item-center gap-2  mt-2 font-bold text-[#525252]">
+                                <MdAccessAlarms className='text-[18px] text-[#FE0C0C]' /> Date and time
+                            </span>
+                            <p className="text-[#3753E8] font-bold text-[20px] mt-1">{eventData.date}</p>
+                        </div>
 
-                            <p className="text-[#3753E8] font-bold text-[20px] mt-1">Sunday, 20feb 2023</p>
+                        <p className="text-[#3753E8] font-bold text-[20px] mt-1">Sunday, 20feb 2023</p>
                     </div>
                     <div className="mt-8">
                         <span className="flex item-center gap-2  mt-2 font-bold text-[#525252]">
@@ -53,16 +53,16 @@ const TicketCart = () => {
                         </h3>
                         <ul className="flex items-center gap-3">
                             <li className='bg-[#D9D9D9] w-[25px] h-[25px] flex items-center justify-center rounded-full'>
-                                <FaFacebookF className='text-sm'/>
+                                <FaFacebookF className='text-sm' />
                             </li>
                             <li className='bg-[#D9D9D9] w-[25px] h-[25px] flex items-center justify-center rounded-full'>
-                                <AiOutlineTwitter className='text-sm'/>
+                                <AiOutlineTwitter className='text-sm' />
                             </li>
                             <li className='bg-[#D9D9D9] w-[25px] h-[25px] flex items-center justify-center rounded-full'>
-                                <FaRegEnvelope className='text-sm'/>
+                                <FaRegEnvelope className='text-sm' />
                             </li>
                             <li className='bg-[#D9D9D9] w-[25px] h-[25px] flex items-center justify-center rounded-full'>
-                                <FiCopy className='text-sm'/>
+                                <FiCopy className='text-sm' />
                             </li>
                         </ul>
                     </div>
@@ -90,31 +90,31 @@ const TicketCart = () => {
                     </ul>
 
                     <img src={qr} className='m-auto w-[114px] h-[114px]' alt="" />
-                        <div className="w-40 h-12 text-center pb-[20px] mt-10 mx-auto group relative inline-bloc shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
-                    
-                            <span className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"></span>
+                    <div className="w-40 h-12 text-center pb-[20px] mt-10 mx-auto group relative inline-bloc  rounded overflow-hidden border border-[#ED1B24] px-2 py-2 bg-red-600 focus:outline-none focus:ring">
 
-                            <span className="relative text-lg font-bold text-white transition-colors  group-hover:text-red-600 flex items-center justify-center">
-                                <BiDownload className='font-bold text-lg mr-4' /> Download
-                            </span>
+                        <span className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"></span>
 
-                        </div>
-                </div>           
+                        <span className="relative text-lg font-bold text-white transition-colors  group-hover:text-red-600 flex items-center justify-center">
+                            <BiDownload className='font-bold text-lg mr-4' /> Download
+                        </span>
+
+                    </div>
+                </div>
             </div>
 
             <div className="block md:hidden  md:mt-[-150px] mt-[-90px]">
-                        <div className="col-span-2 relative bg-[white] rounded-2xl p-8 md:rounded-l-3xl md:h-auto h-[400px] ">
+                <div className="col-span-2 relative bg-[white] rounded-2xl p-8 md:rounded-l-3xl md:h-auto h-[400px] ">
                     <img src={logoLg} className='absolute top-0 left-0 bottom-0 right-0 m-auto' alt="" />
                     <h1 className="md:text-3xl text-xl text-[#FF003D] font-bold">EVENT NAME HEADING</h1><br />
                     <div className="flex justify-between items-end">
-                            <div className="">
-                                <span className="flex item-center gap-2  mt-2 font-bold text-[#525252]">
-                                    <MdAccessAlarms className='text-[18px] text-[#FE0C0C]' /> Date and time
-                                </span>
-                                <p className="text-[#3753E8] font-bold md:text-[20px] mt-1">Sunday, 20feb 2023</p>
-                            </div>
-
+                        <div className="">
+                            <span className="flex item-center gap-2  mt-2 font-bold text-[#525252]">
+                                <MdAccessAlarms className='text-[18px] text-[#FE0C0C]' /> Date and time
+                            </span>
                             <p className="text-[#3753E8] font-bold md:text-[20px] mt-1">Sunday, 20feb 2023</p>
+                        </div>
+
+                        <p className="text-[#3753E8] font-bold md:text-[20px] mt-1">Sunday, 20feb 2023</p>
                     </div>
                     <div className="mt-8">
                         <span className="flex item-center gap-2  mt-2 font-bold text-[#525252]">
@@ -137,16 +137,16 @@ const TicketCart = () => {
                         </h3>
                         <ul className="flex items-center gap-3">
                             <li className='bg-[#D9D9D9] w-[25px] h-[25px] flex items-center justify-center rounded-full'>
-                                <FaFacebookF className='text-sm'/>
+                                <FaFacebookF className='text-sm' />
                             </li>
                             <li className='bg-[#D9D9D9] w-[25px] h-[25px] flex items-center justify-center rounded-full'>
-                                <AiOutlineTwitter className='text-sm'/>
+                                <AiOutlineTwitter className='text-sm' />
                             </li>
                             <li className='bg-[#D9D9D9] w-[25px] h-[25px] flex items-center justify-center rounded-full'>
-                                <FaRegEnvelope className='text-sm'/>
+                                <FaRegEnvelope className='text-sm' />
                             </li>
                             <li className='bg-[#D9D9D9] w-[25px] h-[25px] flex items-center justify-center rounded-full'>
-                                <FiCopy className='text-sm'/>
+                                <FiCopy className='text-sm' />
                             </li>
                         </ul>
                     </div>
