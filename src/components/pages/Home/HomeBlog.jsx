@@ -7,6 +7,7 @@ import commentIcon from '../../../assets/commentIcon.svg';
 import { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { MyContext } from '../../../Contaxt/Context';
+import { RiMenu2Fill, RiMenu4Line } from 'react-icons/ri'
 
 const BlogData = [
   {
@@ -126,7 +127,7 @@ const HomeBlogs = () => {
   }, []);
 
 
-
+  const [menu, setMenu] = useState(!true)
   const menuItem = (
     <>
       <li>
@@ -219,17 +220,23 @@ const HomeBlogs = () => {
       <div className="my-16 grid grid-cols-2 lg:w-[60%] mx-auto text-[22px] font-bold">
         <button
           className={`border-2 border-[#000] py-[10px] ${activeButton === 'Blog'
-            ? 'bg-[#ED1B24] my-btn text-white border-none'
-            : ''
+            ? 'bg-red-500 my-btn text-white  '
+            : 'hover:bg-[#FF265A] hover:border-none'
             }`}
           onClick={() => setActiveButton('Blog')}
         >
           {language === 'bn' ? 'ব্লগ' : 'Blogs'}
         </button>
+        {/* <Link
+          className="px-[32px] duration-200 my-btn py-[8px] bg-[#FF265A] rounded-md text-white text-[11px] md:text-lg h-full shadow-lg"
+          to={`/payment/${id}`}
+        >
+          {language === 'bn' ? 'ক্রয় করুন' : 'Buy'}
+        </Link> */}
         <button
           className={`border-2 border-[#000] py-[10px] ${activeButton === 'Case Studies'
-            ? 'bg-[#ED1B24] my-btn hover: text-white border-none'
-            : ''
+            ? 'bg-red-500  my-btn  text-white border-none hover:bg-[#FF265A]'
+            : 'hover:bg-[#FF265A] hover:border-none'
             }`}
           onClick={() => {
             setActiveButton('Case Studies');
@@ -240,14 +247,23 @@ const HomeBlogs = () => {
         </button>
       </div>
 
-      <div className="mb-[17px] h-7 lg:h-10 lg:border-b-2 lg:border-[#B7B7B7]">
+      <div className=' flex lg:hidden'>
+        <RiMenu2Fill onClick={() => setMenu(true)} className={!menu ? 'text-2xl ' : 'hidden'}></RiMenu2Fill>
+        <RiMenu4Line onClick={() => setMenu(false)} className={menu ? 'text-2xl ' : 'hidden'}></RiMenu4Line>
+
+      </div>
+      <div className={menu ? 'items-center lg:hidden flex-wrap px-10 lg:text-[18px] font-[700] flex gap-16' : 'hidden'}>
+        {menuItem}
+      </div>
+
+      <div className="mb-[17px] hidden lg:flex h-7 lg:h-10 lg:border-b-2 lg:border-[#B7B7B7]">
         <ul className="items-center  text-sm lg:text-[18px] lg:font-[700] flex  gap-16">
           {menuItem}
         </ul>
       </div>
       {/* Blog */}
       {activeButton.includes('Blog' || 'blog') && (
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-[17px]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-[17px]">
           {BlogData.filter(
             (card) => activeButton === 'Blog' || card.category === activeButton
           ).map(({ id, img, headline, info, comment, view }) => {
@@ -268,17 +284,17 @@ const HomeBlogs = () => {
               >
                 <center>
                   <img
-                    className="mb-[18px] w-full shadow-md rounded-[10px]"
+                    className="md:mb-[18px] mb-2 w-full shadow-md rounded-[10px]"
                     src={img}
                     alt=""
                   />
                 </center>
                 <div className="">
-                  <h3 className="text-[20px] font-bold mb-[20px]">
+                  <h3 className="text-[20px] text-sm md:text-lg font-bold mb-[20px]">
                     {headline}
                   </h3>
-                  <p className="mb-[40px]">
-                    {isCardExpanded ? info : info.slice(0, 150) + ' ... '}
+                  <p className="mb-[40px] text-[10px]">
+                    {isCardExpanded ? info : info.slice(0, 100) + ' ... '}
                     {info.length > 150 && (
                       <button
                         className="text-[#ED1B24] "
@@ -290,14 +306,14 @@ const HomeBlogs = () => {
                   </p>
                   <div className="flex justify-between items-center ">
                     <Link to={`/individual-blog/${id}`} >
-                      <button className="px-[32px] py-[8px] bg-[#ED1B24] my-btn rounded-md text-white shadow-lg"> {language === 'bn' ? 'পড়ুন' : 'Read'}</button>
+                      <button className="md:px-[32px] px-2 text-[10px] md:text-lg py-1 md:py-[8px] bg-[#ED1B24] my-btn rounded-md text-white shadow-lg"> {language === 'bn' ? 'পড়ুন' : 'Read'}</button>
                     </Link>
-                    <div className="flex justify-between items-center gap-5">
-                      <h6 className="flex justify-center items-center gap-2 text-[17px] font-bold">
-                        <img src={viewIcon} alt="" /> {view}
+                    <div className="flex justify-between items-center gap-2 md:gap-5">
+                      <h6 className="flex justify-center items-center gap-2 text-[10px] md:text-[17px] font-bold">
+                        <img className=' w-5 /12 md:w-full' src={viewIcon} alt="" /> {view}
                       </h6>
-                      <h6 className="flex justify-center items-center gap-2 text-[17px] font-bold">
-                        <img src={commentIcon} alt="" /> {comment}
+                      <h6 className="flex justify-center items-center text-[10px] md:text-[17px] gap-2  font-bold">
+                        <img className='w-5/12 md:w-full' src={commentIcon} alt="" /> {comment}
                       </h6>
                     </div>
                   </div>
@@ -374,7 +390,7 @@ const HomeBlogs = () => {
 
       <center>
         <Link to={activeButton === 'Case Studies' ? `/case-study` : '/blog'}>
-          <button className="px-[32px] py-[8px] bg-[#000] my-btn rounded-md text-white text-[19px] font-bold shadow-lg mt-[30px]">
+          <button className="px-[32px] py-[8px] bg-red-300 hover:bg-red-500 my-btn rounded-md text-white text-[19px] font-bold shadow-lg mt-[30px]">
             {language === 'bn' ? 'আরো পড়ুন' : 'Read More'}
           </button>
         </Link>

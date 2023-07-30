@@ -12,23 +12,23 @@ const PurchaseHistory = () => {
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
-                    <thead className="bg-[#202123] text-[red] ">
+                    <thead className="bg-[#202123] text-white ">
                         <tr className="text-center">
                             <th className="text-center">
-                            {language === 'bn' ? "ক্রম নং" : "SI. No"}
-                               </th>
-                            <th className="text-center">
-                            {language === 'bn' ? "কোর্স" : "Course"}
+                                {language === 'bn' ? "ক্রম নং" : "SI. No"}
                             </th>
                             <th className="text-center">
-                            {language === 'bn' ? "মুল্য" : "Price"}
-                                </th>
+                                {language === 'bn' ? "কোর্স" : "Course"}
+                            </th>
                             <th className="text-center">
-                            {language === 'bn' ? "পেমেন্ট তারিখ" : "Payment Date"}
-                                </th>
+                                {language === 'bn' ? "মুল্য" : "Price"}
+                            </th>
                             <th className="text-center">
-                            {language === 'bn' ? "ইনভইস" : "Invoice"}
-                                </th>
+                                {language === 'bn' ? "পেমেন্ট তারিখ" : "Payment Date"}
+                            </th>
+                            <th className="text-center">
+                                {language === 'bn' ? "ইনভইস" : "Invoice"}
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,8 +60,8 @@ const PurchaseHistory = () => {
                             <td className="text-center">$4000</td>
                             <td className="text-center">02-06-2023</td>
                             <td className="text-center"><button className="bg-[red] text-white px-3 py-2 rounded-lg my-btn">
-                            {language === 'bn' ? "ডাউনলোড" : "Download"}
-                                </button></td>
+                                {language === 'bn' ? "ডাউনলোড" : "Download"}
+                            </button></td>
                         </tr>
 
                     </tbody>

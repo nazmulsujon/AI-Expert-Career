@@ -44,27 +44,27 @@ const HeroAria = () => {
             </div>
 
             <h4 className="text-[16px] text-red-600 font-bold my-[15px] lg:w-[80%]  ">
-            {language == 'bn'?'  ক্যারিয়ার গড়ুন আর্টিফিশিয়াল ইন্টেলিজেন্স এক্সপার্ট হয়ে এ আই এক্সপার্ট ক্যারিয়ারের সাথে।': 'Build a Career Become an Artificial Intelligence Expert with AI Expert Careers.'}
+              {language == 'bn' ? '  ক্যারিয়ার গড়ুন আর্টিফিশিয়াল ইন্টেলিজেন্স এক্সপার্ট হয়ে এ আই এক্সপার্ট ক্যারিয়ারের সাথে।' : 'Build a Career Become an Artificial Intelligence Expert with AI Expert Careers.'}
             </h4>
             <div className="flex flex-col md:flex-row  justify-start w-3/5 md:w-full md:items-center gap-8 mt-6">
-              
+
               <Link
                 className="group relative inline-bloc shadow-inner shadow-lg shadow-gray-600 shadow-[#] rounded overflow-hidden border border-[#ED1B24] px-8 py-2 bg-red-600 focus:outline-none focus:ring"
                 to="/download"
               >
                 <span
-                  className="absolute inset-y-0 left-0 w-[2px]  bg-[#ede2e3] transition-all group-hover:w-full"
+                  className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"
                 ></span>
 
                 <span
                   className="relative text-sm font-medium text-white transition-colors  group-hover:text-red-600"
                 >
-                {language == 'bn'? 'ফ্রি সেমিনারে জয়েন করুন' :'Register Now'}
+                  {language == 'bn' ? 'ফ্রি সেমিনারে জয়েন করুন' : 'Register Now'}
                 </span>
               </Link>
               <button onClick={() => setIsOpen(true)} className="px-[32px] py-[8px] hover:bg-red-600 border border-[#ED1B24] rounded-md text-black shadow-lg flex justify-between items-center gap-2">
                 <img src={WatchVideo} alt="" />
-                <span>{language == 'bn'? "আমাদের সম্পর্কে":"Watch demo"}</span>
+                <span>{language == 'bn' ? "আমাদের সম্পর্কে" : "Watch demo"}</span>
               </button>
 
             </div>

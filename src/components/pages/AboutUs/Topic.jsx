@@ -4,12 +4,12 @@ import topicImg2 from '../../../assets/aboutus/Rectangle 599.png'
 import { MyContext } from '../../../Contaxt/Context';
 const Topic = () => {
 
-    const {language} = useContext(MyContext)
+    const { language } = useContext(MyContext)
 
     return (
-        <div className='mt-[90px]'>
+        <div className='mt-[90px] p-4'>
             <div className='flex lg:flex-row flex-col gap-9'>
-                <div className='lg:w-4/6 w-full'>
+                <div className='lg:w-4/6 '>
                     <h2 className="font-bold text-[26px] text-[#2D3957]">{language == 'bn' ? 'লার্নারস ও কর্পোরেটদের জন্য কনসাল্টেন্ট সার্ভিস' : 'Consultant Service for Learners and Corporates'}</h2>
                     <p className="text-[#000000]/60 mt-5">
                         {language == 'bn' ?

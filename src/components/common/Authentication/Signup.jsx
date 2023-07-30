@@ -18,7 +18,7 @@ const Signup = () => {
             <div className="px-[40px] lg:px-[70px] py-[40px] lg:py-[100px] bg-white lg:col-span-7 z-10">
               <div className="relative">
                 <h2 className="text-[27px] font-bold mb-[45px]">
-                {language === 'bn' ? 'নতুন একাউন্ট ফর্ম' : "Create an Account"}
+                  {language === 'bn' ? 'নতুন একাউন্ট ফর্ম' : "Create an Account"}
                 </h2>
                 <img
                   className="absolute right-0 top-[50%] transform  -translate-y-[50%]  -z-10"
@@ -37,36 +37,36 @@ const Signup = () => {
                     className="bg-[#fff0] border-b border-[#8E8E8E] w-full mb-[35px] px-2 py-3"
                     name="name"
                     placeholder={language === 'bn' ? 'আপনার নাম' : 'Enter your name'}
-                    
+
                   />
                   <input
                     type="number"
                     className="bg-[#fff0] border-b border-[#8E8E8E] w-full mb-[35px] px-2 py-3"
                     name="phone"
-                  placeholder={language === 'bn' ? 'আপনার মোবাইল নম্বর' : 'Enter your phone number'}
+                    placeholder={language === 'bn' ? 'আপনার মোবাইল নম্বর' : 'Enter your phone number'}
                   />
                   <input
                     type="password"
                     className="bg-[#fff0] border-b border-[#8E8E8E] w-full mb-[40px] px-2 py-3"
                     name="password"
                     placeholder={language === 'bn' ? 'পাসওয়ার্ড' : 'Enter your password'}
-            />
-                 
-              <button
-                  type="submit"
-                className="group relative   shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] w-full py-[14px] bg-[#ED1B24] "
-              
-              >
-                <span
-                  className="absolute inset-y-0 left-0 w-[2px]  bg-[#ede2e3] transition-all group-hover:w-full"
-                ></span>
+                  />
 
-                <span
-                  className="relative text-sm font-medium text-white transition-colors  group-hover:text-red-600"
-                >
-               {language === 'bn' ? 'সাবমিট' : "Sign Up "}
-                </span>
-              </button>
+                  <button
+                    type="submit"
+                    className="group relative   shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] w-full py-[14px] bg-[#ED1B24] "
+
+                  >
+                    <span
+                      className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"
+                    ></span>
+
+                    <span
+                      className="relative text-sm font-medium text-white transition-colors  group-hover:text-red-600"
+                    >
+                      {language === 'bn' ? 'সাবমিট' : "Sign Up "}
+                    </span>
+                  </button>
                 </form>
               </div>
             </div>
@@ -77,27 +77,27 @@ const Signup = () => {
                 </h2>
                 <center>
                   <Link
-                className="group relative   shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-[60px] py-[14px] bg-[#ED1B24]"
-                to="/login"
-              >
-                <span
-                  className="absolute inset-y-0 left-0 w-[2px]  bg-[#ede2e3] transition-all group-hover:w-full"
-                ></span>
+                    className="group relative   shadow-lg shadow-gray-600 rounded overflow-hidden border border-[#ED1B24] px-[60px] py-[14px] bg-[#ED1B24]"
+                    to="/login"
+                  >
+                    <span
+                      className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"
+                    ></span>
 
-                <span
-                  className="relative text-sm font-medium text-white transition-colors  group-hover:text-red-600"
-                >
-                {language === 'bn' ? 'সাইন ইন' : " Sign In"}
-                </span>
-              </Link>
+                    <span
+                      className="relative text-sm font-medium text-white transition-colors  group-hover:text-red-600"
+                    >
+                      {language === 'bn' ? 'সাইন ইন' : " Sign In"}
+                    </span>
+                  </Link>
                 </center>
-                  {/* join with google button  */}
-                  <div className='mt-10  w-[16rem] mx-auto text-center'>
+                {/* join with google button  */}
+                <div className='mt-10  w-[16rem] mx-auto text-center'>
                   <Link
                     to=""
                     className="px-[20px] py-[10px] bg-white rounded-md text-black shadow-lg flex items-center"
                   >
-                 <img className='mr-2 w-[20px] h-[20px]' src="/src/assets/register/Google Logo.png" alt="google_logo" />
+                    <img className='mr-2 w-[20px] h-[20px]' src="/src/assets/register/Google Logo.png" alt="google_logo" />
                     Continue with Google
                   </Link>
                 </div>
@@ -107,7 +107,7 @@ const Signup = () => {
                     to=""
                     className="px-[20px] py-[10px] bg-[#1877F2] rounded-md text-white shadow-lg flex items-center"
                   >
-                 <img className='mr-2 w-[20px] h-[20px]' src="/src/assets/register/facebook_logo.png" alt="facebook_logo" />
+                    <img className='mr-2 w-[20px] h-[20px]' src="/src/assets/register/facebook_logo.png" alt="facebook_logo" />
                     Continue with Facebook
                   </Link>
                 </div>
@@ -117,7 +117,7 @@ const Signup = () => {
                     to=""
                     className="px-[20px] py-[10px] bg-white rounded-md text-black shadow-lg flex items-center"
                   >
-                 <img className='mr-2 w-[20px] h-[20px]' src="/src/assets/register/linkedinLogo.png" alt="linkedin_logo" />
+                    <img className='mr-2 w-[20px] h-[20px]' src="/src/assets/register/linkedinLogo.png" alt="linkedin_logo" />
                     Continue with Linkedin
                   </Link>
                 </div>

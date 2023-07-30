@@ -8,7 +8,7 @@ import { MyContext } from '../../../Contaxt/Context';
 const AiConsultant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState([]);
-  const {language} = useContext(MyContext)
+  const { language } = useContext(MyContext)
   //
 
   const data = [
@@ -32,7 +32,7 @@ const AiConsultant = () => {
   }, []);
 
   return (
-    <div className='bg-[#f3f2ff00] lg:mt-[10px] px-4 py-5 mx-auto max-w-screen lg:px-8'>
+    <div className='bg-[#f3f2ff00] lg:mt-[10px] px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl lg:px-8'>
       <div className=" pb-[92px] pt-[130px]">
         <div className="">
           <h1 className="font-bold text-center text-[35px]">

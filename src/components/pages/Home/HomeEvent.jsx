@@ -61,7 +61,7 @@ const HomeEvent = () => {
                       to="/events"
                     >
                       <span
-                        className="absolute inset-y-0 left-0 w-[2px]  bg-[#ede2e3] transition-all group-hover:w-full"
+                        className="absolute inset-y-0 left-0 w-[2px]  bg-white transition-all group-hover:w-full"
                       ></span>
 
                       <span

@@ -81,20 +81,20 @@ const { language } = useContext(MyContext)
   ];
   return (
     <div className="mt-[30px] mb-[35px]">
-      <h3 className="text-center font-bold text-[30px]">{language === 'bn' ? 'কি কি সুবিধা পাবেন আমাদের থেকে ?' : 'What benefits will you get from us?'}</h3>
+      <h3 className="text-center font-bold lg:text-[30px] text-xl ">{language === 'bn' ? 'কি কি সুবিধা পাবেন আমাদের থেকে ?' : 'What benefits will you get from us?'}</h3>
       <center>
         <img src={line} alt="" />
       </center>
-      <div className="grid md:grid-cols-2  lg:grid-cols-4 gap-5 mt-[40px]">
+      <div className="grid grid-cols-2  lg:grid-cols-4 gap-5 mt-[40px]">
         {aboutCard.map(({ id, img, headline, info, headlineBn, infoBn }) => (
           <div
             key={id}
             className="px-3 pb-8 border-[0.5px] cursor-pointer border-gray-50 shadow hover:shadow-lg text-center bg-[#ffffff0a]">
             <center>
-              <img className="w-[83px] my-7"  src={img} alt="" />
+              <img className="lg:w-[83px] w-16 my-7"  src={img} alt="" />
             </center>
-            <h3 className="text-[20px] font-semibold mb-[17px]">{language === 'bn' ? headlineBn : headline}</h3>
-            <p>{language === 'bn' ? infoBn : info}</p>
+            <h3 className="text-[20px] text-lg font-semibold mb-[17px]">{language === 'bn' ? headlineBn : headline}</h3>
+            <p className="text-sm">{language === 'bn' ? infoBn : info}</p>
           </div>
         ))}
       </div>

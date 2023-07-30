@@ -10,7 +10,7 @@ import { MyContext } from "../../../Contaxt/Context";
 const HomeHeading = () => {
 
 
-  const [activeNavLink, setActiveNavLink] = useState("/home"); 
+  const [activeNavLink, setActiveNavLink] = useState("/home");
   const [active, setActive] = useState("roadmap")
 
   const { language } = useContext(MyContext)
@@ -24,9 +24,7 @@ const HomeHeading = () => {
       <li>
         <NavLink
           to="/home"
-
-          className={`${active === "roadmap" ? "border-b-[4px] border-[#EB3223]  bg-[#ffff0000] text-[#EB3223]" : " bg-transparent"} px-8 py-4`}
-
+          className={`${active === "roadmap" ? "border-b-[4px] border-[#EB3223] text-sm md:text-lg  bg-[#ffff0000] text-[#EB3223]" : " bg-transparent"} md:px-8 px-2 py-4 text-sm md:text-lg`}
           onClick={() => activeValue("/home", "roadmap")}
         >
           {language === 'bn' ? 'ক্যারিয়ার রোডম্যাপ' : "Career Roadmap"}
@@ -35,8 +33,7 @@ const HomeHeading = () => {
       <li>
         <NavLink
           to="/"
-          className={`${active === "consultant" ? "border-b-[4px] border-[#EB3223] bg-[#ffff0000] text-[#EB3223]" : " bg-transparent"}  px-8 py-4`}
-
+          className={`${active === "consultant" ? "border-b-[4px] text-sm md:text-lg border-[#EB3223] bg-[#ffff0000] text-[#EB3223]" : "bg-transparent"} text-sm md:text-lg  md:px-8 px-2 py-4`}
           onClick={() => activeValue("/home", "consultant")}
         >
           {language === 'bn' ? "ক্যারিয়ার কনসালট্যান্ট" : "Career Consultant"}
@@ -57,7 +54,7 @@ const HomeHeading = () => {
       <center>
         <img src={line} alt="" />
       </center>
-      
+
       <ul className="items-center text-[18px] font-[700] flex justify-center my-[55px] border-b-2 border-[#7E7E7E] gap-3 lg:gap-72 py-3">
         {menuItem}
       </ul>

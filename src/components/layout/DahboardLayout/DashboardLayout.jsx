@@ -29,9 +29,9 @@ const DashboardLayout = () => {
             <BsChevronRight />
           </button>
         }
-        
+
         <div
-    // eslint-disable-next-line react/no-unknown-property 
+          // eslint-disable-next-line react/no-unknown-property 
           x-data="{ isOpen: false }"
           className=" relative pt-[60px] lg:pt-[100px] px-4 mx-auto max-w-full md:max-w-full lg:max-w-screen-xl xl:max-w-screen-xl 2xl:max-w-screen-2xl md:px-24 lg:px-20 2xl:px-8"
         >
@@ -54,14 +54,14 @@ const DashboardLayout = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "text-white bg-[#ED1B24] py-[10px] items-center w-[234px] pl-4  my-1 text-lg font-bold flex   rounded-[10px]"
-                        : "my-1 text-lg font-bold flex   rounded-[10px] text-gray-700 transition-colors duration-300 transform dark:text-gray-200 py-[10px] items-center w-[234px] pl-4 hover:bg-[#ED1B24]/20"
+                        : "my-1 text-lg font-bold flex   rounded-[10px] text-gray-700 transition-colors duration-300 transform  py-[10px] items-center w-[234px] pl-4 hover:bg-[#ED1B24]/20"
                     }
                   >
                     <BsGrid
                       className={`${({ isActive }) => (isActive ? "text-white" : "text-red-600")}mb-[4px] mr-2 `}
                     />
-                     {language === 'bn' ? 'ড্যাশবোর্ড' : "Dashboard"}
-                    
+                    {language === 'bn' ? 'ড্যাশবোর্ড' : "Dashboard"}
+
                   </NavLink>
 
                   <NavLink
@@ -69,13 +69,13 @@ const DashboardLayout = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "text-white bg-[#ED1B24] py-[10px] items-center w-[234px] pl-4  my-1 text-lg font-bold flex   rounded-[10px]"
-                        : "my-1 text-lg font-bold flex   rounded-[10px] text-gray-700 transition-colors duration-300 transform dark:text-gray-200 py-[10px] items-center w-[234px] pl-4 hover:bg-[#ED1B24]/20"
+                        : "my-1 text-lg font-bold flex   rounded-[10px] text-gray-700 transition-colors duration-300 transform  py-[10px] items-center w-[234px] pl-4 hover:bg-[#ED1B24]/20"
                     }
                   >
                     <BsPerson
                       className={`${({ isActive }) => (isActive ? "text-white" : "text-red-600")}mb-[4px] mr-2 `}
                     />
-                     {language === 'bn' ? 'আমার প্রোফাইল' : "My Profile"}
+                    {language === 'bn' ? 'আমার প্রোফাইল' : "My Profile"}
                   </NavLink>
 
                   <NavLink
@@ -83,14 +83,14 @@ const DashboardLayout = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "text-white bg-[#ED1B24]  py-[10px] items-center w-[234px] pl-4 my-1 text-lg font-bold flex   rounded-[10px]"
-                        : "my-1 text-lg font-bold flex   rounded-[10px] text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-maroon py-[10px] items-center w-[234px] pl-4 hover:bg-[#ED1B24]/20"
+                        : "my-1 text-lg font-bold flex   rounded-[10px] text-gray-700 transition-colors duration-300 transform  hover:text-maroon py-[10px] items-center w-[234px] pl-4 hover:bg-[#ED1B24]/20"
                     }
                   >
                     <BsLaptop
                       className={`${({ isActive }) => (isActive ? "text-white" : "text-red-600")}mb-[4px] mr-2 `}
                     />
                     {language === 'bn' ? 'আমার কোর্স সমূূহ' : "My courses"}
-                    
+
                   </NavLink>
 
                   <NavLink
@@ -98,14 +98,14 @@ const DashboardLayout = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "text-white bg-[#ED1B24] py-[10px] items-center w-[234px] pl-4  my-1 text-lg font-bold flex   rounded-[10px]"
-                        : "my-1 text-lg font-bold flex   rounded-[10px] text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-maroon py-[10px] items-center w-[234px] pl-4 hover:bg-[#ED1B24]/20"
+                        : "my-1 text-lg font-bold flex   rounded-[10px] text-gray-700 transition-colors duration-300 transform  hover:text-maroon py-[10px] items-center w-[234px] pl-4 hover:bg-[#ED1B24]/20"
                     }
                   >
                     <AiOutlineHeart
                       className={`${({ isActive }) => (isActive ? "text-white" : "text-red-600")}mb-[4px] mr-2 `}
                     />
-                     {language === 'bn' ? 'আমার উইশলিস্ট' : "My Wislist"}
-                   
+                    {language === 'bn' ? 'আমার উইশলিস্ট' : "My Wislist"}
+
                   </NavLink>
 
                   <NavLink
@@ -113,14 +113,14 @@ const DashboardLayout = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "text-white bg-[#ED1B24] py-[10px] items-center w-[234px] pl-4  my-1 text-lg font-bold flex   rounded-[10px]"
-                        : "my-1 text-lg font-bold flex   rounded-[10px] text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-maroon py-[10px] items-center w-[234px] pl-4 hover:bg-[#ED1B24]/20"
+                        : "my-1 text-lg font-bold flex   rounded-[10px] text-gray-700 transition-colors duration-300 transform  hover:text-maroon py-[10px] items-center w-[234px] pl-4 hover:bg-[#ED1B24]/20"
                     }
                   >
                     <TbFileReport
                       className={`${({ isActive }) => (isActive ? "text-white" : "text-red-600")}mb-[4px] mr-2 `}
                     />
                     {language === 'bn' ? 'লেনদেন হিস্টোরি' : "Purchase History"}
-                   
+
                   </NavLink>
 
                   <NavLink
@@ -128,22 +128,22 @@ const DashboardLayout = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "text-white bg-[#ED1B24] py-[10px] items-center w-[234px] pl-4  my-1 text-lg font-bold flex  rounded-[10px] "
-                        : "my-1 text-lg font-bold flex   rounded-[10px] text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-maroon py-[10px] items-center w-[234px] pl-4 hover:bg-[#ED1B24]/20"
+                        : "my-1 text-lg font-bold flex   rounded-[10px] text-gray-700 transition-colors duration-300 transform  hover:text-maroon py-[10px] items-center w-[234px] pl-4 hover:bg-[#ED1B24]/20"
                     }
                   >
-                  
+
                     <VscVerified
                       className={`${({ isActive }) => (isActive ? "text-white" : "text-red-600")}mb-[4px] mr-2 `}
                     />
-                     {language === 'bn' ? 'সার্টিফিকেশন' : "Certification"}
-                   
+                    {language === 'bn' ? 'সার্টিফিকেশন' : "Certification"}
+
                   </NavLink>
                 </ul>
                 <div className="absolute bottom-5 left-[36px] flex items-center cursor-pointer">
                   <img src={logoutLogo} alt="" className="mr-2.5 h-4 w-4 mb-1.5" />
                   <button className="font-bold">
-                  {language === 'bn' ? 'লগ আউট' : "Logout"}
-                    </button>
+                    {language === 'bn' ? 'লগ আউট' : "Logout"}
+                  </button>
                 </div>
               </div>
             </div>

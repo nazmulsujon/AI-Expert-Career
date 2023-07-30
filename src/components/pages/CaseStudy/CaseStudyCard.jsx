@@ -5,7 +5,7 @@ import comment from './Assests/comment.png';
 
 const CaseStudyCard = ({ study }) => {
   return (
-    <div key={study.id} className="bg-white w-[288px] h-[389px] rounded-[10px]">
+    <div key={study.id} className="bg-white w-[288px] h-[389px] rounded-[10px]  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
       <div className="flex flex-col gap-5 justify-center items-center">
         <img
           className="w-[254px] h-[170px] pt-[15px]"

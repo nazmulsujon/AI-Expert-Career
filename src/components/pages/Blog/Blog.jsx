@@ -147,11 +147,11 @@ const productsData = [
 
 const Blog = () => {
 
-  const {language} = useContext(MyContext)
+  const { language } = useContext(MyContext)
   const [newData, setNewData] = useState(productsData);
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
   const pagination = [1, 2, 3, 4, 5];
-  
+
 
   const handleCheckboxChange = (event) => {
     const checkboxValue = event.target.value;

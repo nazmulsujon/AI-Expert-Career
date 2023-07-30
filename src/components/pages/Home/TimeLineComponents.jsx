@@ -6,7 +6,7 @@ import "react-vertical-timeline-component/style.min.css";
 const TimeLineComponent = () => {
   return (
     <div className="main">
-      <div className="container">
+      <div className="container w-11/12">
         <ul>
           <li>
             <div className="">
@@ -101,9 +101,9 @@ const TimeLineComponent = () => {
       </div>
       <center>
         <Link to="/roadmap">
-        <button className="px-[32px] py-[8px] bg-[#000] rounded-md text-white text-[19px] font-bold shadow-lg mt-[30px]">
-          See more
-        </button></Link>
+          <button className="px-[32px] py-[8px] bg-[#000] rounded-md text-white text-[19px] font-bold shadow-lg mt-[30px]">
+            See more
+          </button></Link>
       </center>
     </div>
   );

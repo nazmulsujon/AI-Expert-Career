@@ -10,7 +10,7 @@ const CourseSlider = ({
     width,
     height,
     radius,
-    // style,
+    
     dots,
     automatic,
     pauseIconColor,

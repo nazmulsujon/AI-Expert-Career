@@ -113,11 +113,10 @@ const Kit = () => {
       {/* toggle button  */}
       <div className="my-16  grid bg-[#0000001A] rounded-xl grid-cols-2 lg:w-[60%] mx-auto text-[22px] font-bold">
         <button
-          className={`py-[10px] ${
-            activeButton === "Ai Kit"
+          className={`py-[10px] ${activeButton === "Ai Kit"
               ? "text-[#ED1B24] rounded-xl bg-white border-none"
               : ""
-          }`}
+            }`}
           onClick={() => {
             setActiveButton("Ai Kit");
             setActiveSection("Ai Kit");
@@ -126,11 +125,10 @@ const Kit = () => {
           {language === "bn" ? "এআই কিট" : "Ai Kit"}
         </button>
         <button
-          className={` ${
-            activeButton === "Ai Tools"
+          className={` ${activeButton === "Ai Tools"
               ? "text-[#ED1B24] rounded-xl bg-white border-none"
               : ""
-          }`}
+            }`}
           onClick={() => {
             setActiveButton("Ai Tools");
             setActiveSection("Ai Tools");
@@ -156,7 +154,7 @@ const Kit = () => {
       )}
 
       {activeSection === "Ai Tools" && (
-        <div className="">
+        <div className=" text-center">
           <h1 className="text-3xl font-bold mb-4">
             {language === "bn"
               ? "দৈনন্দিন কাজের গতি বাড়াতে ব্যবহার করুন এ আই টুলস!"

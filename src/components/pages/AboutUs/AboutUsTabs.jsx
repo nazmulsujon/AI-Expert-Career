@@ -8,7 +8,7 @@ function classNames(...classes) {
 }
 const AboutUsTabs = () => {
 
-    const {language} = useContext(MyContext)
+    const { language } = useContext(MyContext)
 
     let [categories] = useState([
         {
@@ -48,10 +48,10 @@ const AboutUsTabs = () => {
                                 key={i}
                                 className={({ selected }) =>
                                     classNames(
-                                        'w-full py-2.5 text-xl leading-5 text-black font-bold outline-none',
+                                        'w-full py-2.5 text-xl leading-5 hover:border-b-4 hover:border-red-100 text-black font-bold outline-none',
                                         selected
-                                            ? 'border-b-4 border-[#FE0651]/70 '
-                                            : ' '
+                                            ? 'border-b-4  border-[#FE0651]/70 '
+                                            : '  '
                                     )
                                 }
                             >
@@ -72,7 +72,7 @@ const AboutUsTabs = () => {
                             <div className='flex justify-center items-center'>
                                 <div className='md:w-5/6 w-full px-2 md:px-0 lg:flex'>
                                     <div className='w-full lg:w-1/2 flex flex-col justify-center'>
-                                        <h3 className='text-[30px] font-bold text-[#FE0651]'>{language == 'bn' ? item.titleBN : item.titleEN}</h3>
+                                        <h3 className='text-[30px] font-bold  text-[#FE0651]'>{language == 'bn' ? item.titleBN : item.titleEN}</h3>
                                         <p className='mt-3 text-[rgba(0,0,0,0.6)]'>{language == 'bn' ? item.detailsBN : item.detailsEN}</p>
                                     </div>
                                     <div className='w-full lg:w-1/2 h-[242px] flex justify-center items-center'>
