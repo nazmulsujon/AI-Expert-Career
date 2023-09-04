@@ -4,7 +4,6 @@ import { FaRegBookmark, FaShareAlt } from "react-icons/fa";
 import { MdArrowForward } from "react-icons/md";
 import { AiOutlineStar } from "react-icons/ai";
 import cover from "../../../../assets/Kit/aitoolCart.png";
-import ProgressBar from "./ProgressBar";
 import { MyContext } from "../../../../Contaxt/Context";
 
 const AiToolsDetails = () => {
@@ -73,26 +72,22 @@ const AiToolsDetails = () => {
     setVisibleItems((prevVisibleItems) => prevVisibleItems + 3);
   };
 
-  const performance = [
-    {
-      progress: 0,
-    },
-    {
-      progress: 30,
-    },
-    {
-      progress: 44,
-    },
-    {
-      progress: 20,
-    },
-    {
-      progress: 55,
-    },
-    {
-      progress: 100,
-    },
-  ];
+  const [volume, setVolume] = useState(10); // Initial volume level
+  const [volume1, setVolume1] = useState(10); // Initial volume1 level
+  const [volume2, setVolume2] = useState(10); // Initial volume2 level
+
+  const handleVolumeChange = (event) => {
+    const newVolume = parseInt(event.target.value);
+    setVolume(newVolume);
+  };
+  const handleVolumeChange1 = (event) => {
+    const newVolume = parseInt(event.target.value);
+    setVolume1(newVolume);
+  };
+  const handleVolumeChange2 = (event) => {
+    const newVolume = parseInt(event.target.value);
+    setVolume2(newVolume);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -180,13 +175,65 @@ const AiToolsDetails = () => {
 
       <div className="lg:grid grid-cols-2 gap-28 py-8 px-8 mt-[26px] bg-[#ed1b240d]">
         <div>
-          {performance.map((item, i) => (
-            <ProgressBar key={i} item={item} />
-          ))}
           <div>
-            <h1 className="text-[#ED1B24] text-center text-[20px]">
-              Your Total Rating: 5/10
-            </h1>
+            <p>Performance</p>
+            <div className="flex items-center space-x-4">
+              <input
+                type="range"
+                min="0"
+                max="10"
+                step="1"
+                value={volume}
+                onChange={handleVolumeChange}
+                className={`w-48 h-2 rounded-full }`}
+                style={{
+                  background: `linear-gradient(to right, #3182CE 0%, #3182CE ${
+                    volume * 10
+                  }%, #CBD5E0 ${volume * 10} %, #CBD5E0 100%)`,
+                }}
+              />
+              <div className="w-8 text-center">{volume}</div>
+            </div>
+          </div>
+          <div>
+            <p>Performance</p>
+            <div className="flex items-center space-x-4">
+              <input
+                type="range"
+                min="0"
+                max="10"
+                step="1"
+                value={volume2}
+                onChange={handleVolumeChange2}
+                className={`w-48 h-2 rounded-full }`}
+                style={{
+                  background: `linear-gradient(to right, #3182CE 0%, #3182CE ${
+                    volume2 * 10
+                  }%, #CBD5E0 ${volume2 * 10} %, #CBD5E0 100%)`,
+                }}
+              />
+              <div className="w-8 text-center">{volume2}</div>
+            </div>
+          </div>
+          <div>
+            <p>Performance</p>
+            <div className="flex items-center space-x-4">
+              <input
+                type="range"
+                min="0"
+                max="10"
+                step="1"
+                value={volume1}
+                onChange={handleVolumeChange1}
+                className={`w-48 h-2 rounded-full }`}
+                style={{
+                  background: `linear-gradient(to right, #3182CE 0%, #3182CE ${
+                    volume1 * 10
+                  }%, #CBD5E0 ${volume1 * 10} %, #CBD5E0 100%)`,
+                }}
+              />
+              <div className="w-8 text-center">{volume1}</div>
+            </div>
           </div>
         </div>
 
